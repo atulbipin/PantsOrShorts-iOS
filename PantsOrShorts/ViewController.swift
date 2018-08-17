@@ -13,10 +13,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let pantShortRecommender = PantShortRecommender()
     let weatherAPI = Weather()
-//    let recommendation: Recommendation?
+    var currentWeather: Celsius?
     
     @IBAction func onButtonPress() {
         locationManager.requestLocation()
+    }
+
+    @IBAction func tooCold() {
+        if let currentWeather = self.currentWeather {
+            pantShortRecommender.updateUserPreference(with: .tooCold, for: currentWeather)
+            locationManager.requestLocation()
+        }
+    }
+
+    @IBAction func tooHot() {
+        if let currentWeather = self.currentWeather {
+            pantShortRecommender.updateUserPreference(with: .tooHot, for: currentWeather)
+            locationManager.requestLocation()
+        }
     }
     
     override func viewDidLoad() {
@@ -39,10 +53,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if let latitude = locations.last?.coordinate.latitude, let longitude = locations.last?.coordinate.longitude {
             print("\(latitude),\(longitude)")
             
+            // TODO: Figure out async stuff going on here
+
             weatherAPI.getWeather(lon: longitude, lat: latitude) { currentWeather in
                 if let currentWeather = currentWeather {
-                    debugPrint("Current weather: \(Celsius(temp: currentWeather.temp).value)")
-                    debugPrint(self.pantShortRecommender.getRecommendation(for: Celsius(temp: currentWeather.temp)))
+                    self.currentWeather = Celsius(temp: currentWeather.temp)
+                    debugPrint("Current weather: \(Celsius(temp: currentWeather.temp).value)°C")
+                    debugPrint(self.pantShortRecommender.getRecommendation(for: self.currentWeather!))
                 }
             }
             

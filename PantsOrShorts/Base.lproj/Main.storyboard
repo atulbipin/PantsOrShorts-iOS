@@ -25,11 +25,29 @@
                                     <action selector="onButtonPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qg1-dj-qja"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y2-Br-5J7">
+                                <rect key="frame" x="253" y="482" width="70" height="30"/>
+                                <state key="normal" title="Too COLD"/>
+                                <connections>
+                                    <action selector="tooCold" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ngo-xq-Y5R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnk-Sq-FIl">
+                                <rect key="frame" x="68" y="482" width="61" height="30"/>
+                                <state key="normal" title="Too HOT"/>
+                                <connections>
+                                    <action selector="tooHot" destination="BYZ-38-t0r" eventType="touchUpInside" id="oGS-On-Mtl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1y2-Br-5J7" firstAttribute="baseline" secondItem="Nnk-Sq-FIl" secondAttribute="baseline" id="2nq-ye-pdu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1y2-Br-5J7" secondAttribute="trailing" constant="52" id="UhQ-uR-rqj"/>
+                            <constraint firstItem="1y2-Br-5J7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="462" id="dQG-6j-KcZ"/>
                             <constraint firstItem="UvT-Yx-ptk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dR9-3m-Yfz"/>
                             <constraint firstItem="UvT-Yx-ptk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ivF-vh-07B"/>
+                            <constraint firstItem="Nnk-Sq-FIl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="y5p-fg-8Ek"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
