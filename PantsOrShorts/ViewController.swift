@@ -11,7 +11,9 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
+    let pantShortRecommender = PantShortRecommender()
     let weatherAPI = Weather()
+//    let recommendation: Recommendation?
     
     @IBAction func onButtonPress() {
         locationManager.requestLocation()
@@ -37,7 +39,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if let latitude = locations.last?.coordinate.latitude, let longitude = locations.last?.coordinate.longitude {
             print("\(latitude),\(longitude)")
             
-            weatherAPI.getWeather(lon: longitude, lat: latitude)
+            weatherAPI.getWeather(lon: longitude, lat: latitude) { currentWeather in
+                if let currentWeather = currentWeather {
+                    debugPrint("Current weather: \(Celsius(temp: currentWeather.temp).value)")
+                    debugPrint(self.pantShortRecommender.getRecommendation(for: Celsius(temp: currentWeather.temp)))
+                }
+            }
             
             lookUpCurrentLocation { geoLocation in
                 print(geoLocation?.locality ?? "Unknown geo location")

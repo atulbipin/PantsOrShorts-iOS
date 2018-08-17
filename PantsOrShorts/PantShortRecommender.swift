@@ -38,7 +38,7 @@ public class PantShortRecommender {
     private let DEFAULT_THRESHOLD_TEMP = 21.0 // In Celsius
     private let USER_THRESHOLD_KEY = "shorts_thresh_hold"
     
-    public var thresholdTemp: Double {
+    private var thresholdTemp: Double {
         get {
             if let thresholdValue = UserDefaults.standard.string(forKey: USER_THRESHOLD_KEY), let thresholdDouble = Double(thresholdValue) {
                 return thresholdDouble
@@ -57,11 +57,12 @@ public class PantShortRecommender {
         return temperature.value > thresholdTemp ? .shorts : .pant
     }
     
-    public func tooColdForShorts(currentTemp: Celsius) {
-        thresholdTemp = currentTemp.value + 1
-    }
-    
-    public func tooHotForPants(currentTemp: Celsius) {
-        thresholdTemp = currentTemp.value - 1
+    public func updateUserPreference(with preference: UserPreference, for currentTemp: Celsius) {
+        switch preference {
+        case .tooCold:
+            thresholdTemp = currentTemp.value + 1
+        case .tooHot:
+            thresholdTemp = currentTemp.value - 1
+        }
     }
 }

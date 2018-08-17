@@ -23,7 +23,7 @@ public class Weather {
         )
     }
 
-    public func getWeather(lon: Double, lat: Double) {
+    public func getWeather(lon: Double, lat: Double, completion: @escaping (CurrentWeather?) -> Void) {
         let params = [
             "appid": API_KEY,
             "lat": lat,
@@ -33,10 +33,12 @@ public class Weather {
         Alamofire.request("\(OPEN_WEATHER_BASE_URL)\(WEATHER_API_ENDPOINT)", method: .get, parameters: params, encoding: URLEncoding.default).validate().responseJSON { response in
             switch response.result {
             case .success:
-                debugPrint(self.extractCurrentTemperature(from: JSON(response.data ?? Data())))
+                completion(self.extractCurrentTemperature(from: JSON(response.data ?? Data())))
             case .failure(let error):
+                completion(nil)
                 print(error)
             }
+            
         }
     }
 }
