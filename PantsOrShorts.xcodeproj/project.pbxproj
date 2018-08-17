@@ -18,6 +18,20 @@
 		397704A92126B84900C56DD7 /* PantShortRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704A82126B84900C56DD7 /* PantShortRecommender.swift */; };
 		39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
 		69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */; };
+		940066C0591F0B52757FC6A7 /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */; };
+		9848D2638DC7F450568AE5E1 /* Pods_PoSExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F18FD96CE79BEC117B5F605C /* Pods_PoSExtension.framework */; };
+		B30C3AFA212748DB0051519E /* Alamofire.framework in Sources */ = {isa = PBXBuildFile; fileRef = B3E76FB6212746E700803DDC /* Alamofire.framework */; };
+		B3E76F9A2127432A00803DDC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76F992127432A00803DDC /* NotificationCenter.framework */; };
+		B3E76F9D2127432A00803DDC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E76F9C2127432A00803DDC /* TodayViewController.swift */; };
+		B3E76FA02127432A00803DDC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E76F9E2127432A00803DDC /* MainInterface.storyboard */; };
+		B3E76FA42127432A00803DDC /* PoSExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B3E76F982127432A00803DDC /* PoSExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B3E76FA9212743CE00803DDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF2B2126681B00203541 /* AppDelegate.swift */; };
+		B3E76FAA212743CE00803DDC /* PantsOrShorts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF322126681B00203541 /* PantsOrShorts.xcdatamodeld */; };
+		B3E76FAB212743CE00803DDC /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
+		B3E76FAC212743CE00803DDC /* PantShortRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704A82126B84900C56DD7 /* PantShortRecommender.swift */; };
+		B3E76FB02127457E00803DDC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FAF2127457E00803DDC /* Alamofire.framework */; };
+		B3E76FB52127468300803DDC /* Alamofire.framework in Sources */ = {isa = PBXBuildFile; fileRef = B3E76FAF2127457E00803DDC /* Alamofire.framework */; };
+		B3E76FB7212746E700803DDC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB6212746E700803DDC /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +49,32 @@
 			remoteGlobalIDString = 390BAF272126681A00203541;
 			remoteInfo = PantsOrShorts;
 		};
+		B3E76FA22127432A00803DDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 390BAF202126681A00203541 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3E76F972127432A00803DDC;
+			remoteInfo = PoSExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B3E76FA82127432A00803DDC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B3E76FA42127432A00803DDC /* PoSExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		034B03A8077773A722C9BA87 /* Pods-PoSExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoSExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoSExtension/Pods-PoSExtension.release.xcconfig"; sourceTree = "<group>"; };
+		14FADFE2A640698F33B227B1 /* Pods-PoSExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoSExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoSExtension/Pods-PoSExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		390BAF282126681A00203541 /* PantsOrShorts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantsOrShorts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		390BAF2B2126681B00203541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		390BAF2D2126681B00203541 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +93,16 @@
 		39ED704421267AFF00582E1C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.release.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.release.xcconfig"; sourceTree = "<group>"; };
 		A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantsOrShorts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E76F982127432A00803DDC /* PoSExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PoSExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E76F992127432A00803DDC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B3E76F9C2127432A00803DDC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B3E76F9F2127432A00803DDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B3E76FA12127432A00803DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E76FAF2127457E00803DDC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PantsOrShorts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E76FB6212746E700803DDC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72F8EA36460BEC83471D8F7 /* Pods-PantsOrShorts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.debug.xcconfig"; sourceTree = "<group>"; };
+		F18FD96CE79BEC117B5F605C /* Pods_PoSExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoSExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E76FB7212746E700803DDC /* Alamofire.framework in Frameworks */,
 				69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */,
+				940066C0591F0B52757FC6A7 /* Pods_PantsOrShorts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +130,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3E76F952127432A00803DDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E76FB02127457E00803DDC /* Alamofire.framework in Frameworks */,
+				B3E76F9A2127432A00803DDC /* NotificationCenter.framework in Frameworks */,
+				9848D2638DC7F450568AE5E1 /* Pods_PoSExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1260EC20EDF870856CE5B130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3E76FB6212746E700803DDC /* Alamofire.framework */,
+				B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */,
+				B3E76FAF2127457E00803DDC /* Alamofire.framework */,
 				A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */,
+				B3E76F992127432A00803DDC /* NotificationCenter.framework */,
+				F18FD96CE79BEC117B5F605C /* Pods_PoSExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,6 +162,7 @@
 				390BAF2A2126681A00203541 /* PantsOrShorts */,
 				390BAF422126681C00203541 /* PantsOrShortsTests */,
 				390BAF4D2126681C00203541 /* PantsOrShortsUITests */,
+				B3E76F9B2127432A00803DDC /* PoSExtension */,
 				390BAF292126681A00203541 /* Products */,
 				D2779DB1F1927FB91E99EB53 /* Pods */,
 				1260EC20EDF870856CE5B130 /* Frameworks */,
@@ -111,6 +175,7 @@
 				390BAF282126681A00203541 /* PantsOrShorts.app */,
 				390BAF3F2126681C00203541 /* PantsOrShortsTests.xctest */,
 				390BAF4A2126681C00203541 /* PantsOrShortsUITests.xctest */,
+				B3E76F982127432A00803DDC /* PoSExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,11 +214,23 @@
 			path = PantsOrShortsUITests;
 			sourceTree = "<group>";
 		};
+		B3E76F9B2127432A00803DDC /* PoSExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B3E76F9C2127432A00803DDC /* TodayViewController.swift */,
+				B3E76F9E2127432A00803DDC /* MainInterface.storyboard */,
+				B3E76FA12127432A00803DDC /* Info.plist */,
+			);
+			path = PoSExtension;
+			sourceTree = "<group>";
+		};
 		D2779DB1F1927FB91E99EB53 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				D72F8EA36460BEC83471D8F7 /* Pods-PantsOrShorts.debug.xcconfig */,
 				6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */,
+				14FADFE2A640698F33B227B1 /* Pods-PoSExtension.debug.xcconfig */,
+				034B03A8077773A722C9BA87 /* Pods-PoSExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -170,10 +247,12 @@
 				390BAF252126681A00203541 /* Frameworks */,
 				390BAF262126681A00203541 /* Resources */,
 				8F1611C9F7009112507A2A00 /* [CP] Embed Pods Frameworks */,
+				B3E76FA82127432A00803DDC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3E76FA32127432A00803DDC /* PBXTargetDependency */,
 			);
 			name = PantsOrShorts;
 			productName = PantsOrShorts;
@@ -216,6 +295,24 @@
 			productReference = 390BAF4A2126681C00203541 /* PantsOrShortsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B3E76F972127432A00803DDC /* PoSExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3E76FA72127432A00803DDC /* Build configuration list for PBXNativeTarget "PoSExtension" */;
+			buildPhases = (
+				87F17CC6A74AAB2AE4A97F37 /* [CP] Check Pods Manifest.lock */,
+				B3E76F942127432A00803DDC /* Sources */,
+				B3E76F952127432A00803DDC /* Frameworks */,
+				B3E76F962127432A00803DDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoSExtension;
+			productName = PoSExtension;
+			productReference = B3E76F982127432A00803DDC /* PoSExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,6 +334,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 390BAF272126681A00203541;
 					};
+					B3E76F972127432A00803DDC = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 390BAF232126681A00203541 /* Build configuration list for PBXProject "PantsOrShorts" */;
@@ -255,6 +355,7 @@
 				390BAF272126681A00203541 /* PantsOrShorts */,
 				390BAF3E2126681C00203541 /* PantsOrShortsTests */,
 				390BAF492126681C00203541 /* PantsOrShortsUITests */,
+				B3E76F972127432A00803DDC /* PoSExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -284,6 +385,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3E76F962127432A00803DDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E76FA02127432A00803DDC /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -299,6 +408,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PantsOrShorts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87F17CC6A74AAB2AE4A97F37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PoSExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E76FB52127468300803DDC /* Alamofire.framework in Sources */,
 				390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */,
 				39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */,
 				390BAF2E2126681B00203541 /* ViewController.swift in Sources */,
@@ -356,6 +484,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3E76F942127432A00803DDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30C3AFA212748DB0051519E /* Alamofire.framework in Sources */,
+				B3E76FA9212743CE00803DDC /* AppDelegate.swift in Sources */,
+				B3E76FAA212743CE00803DDC /* PantsOrShorts.xcdatamodeld in Sources */,
+				B3E76FAB212743CE00803DDC /* WeatherAPI.swift in Sources */,
+				B3E76FAC212743CE00803DDC /* PantShortRecommender.swift in Sources */,
+				B3E76F9D2127432A00803DDC /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -368,6 +509,11 @@
 			isa = PBXTargetDependency;
 			target = 390BAF272126681A00203541 /* PantsOrShorts */;
 			targetProxy = 390BAF4B2126681C00203541 /* PBXContainerItemProxy */;
+		};
+		B3E76FA32127432A00803DDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3E76F972127432A00803DDC /* PoSExtension */;
+			targetProxy = B3E76FA22127432A00803DDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -386,6 +532,14 @@
 				390BAF382126681C00203541 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3E76F9E2127432A00803DDC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3E76F9F2127432A00803DDC /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -509,9 +663,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D72F8EA36460BEC83471D8F7 /* Pods-PantsOrShorts.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DT54T9R534;
+				DEVELOPMENT_TEAM = P45P8NP67G;
 				INFOPLIST_FILE = PantsOrShorts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,9 +683,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DT54T9R534;
+				DEVELOPMENT_TEAM = P45P8NP67G;
 				INFOPLIST_FILE = PantsOrShorts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -625,6 +781,46 @@
 			};
 			name = Release;
 		};
+		B3E76FA52127432A00803DDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14FADFE2A640698F33B227B1 /* Pods-PoSExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT54T9R534;
+				INFOPLIST_FILE = PoSExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.PoSExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3E76FA62127432A00803DDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 034B03A8077773A722C9BA87 /* Pods-PoSExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT54T9R534;
+				INFOPLIST_FILE = PoSExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.PoSExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -660,6 +856,15 @@
 			buildConfigurations = (
 				390BAF5A2126681C00203541 /* Debug */,
 				390BAF5B2126681C00203541 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3E76FA72127432A00803DDC /* Build configuration list for PBXNativeTarget "PoSExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3E76FA52127432A00803DDC /* Debug */,
+				B3E76FA62127432A00803DDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

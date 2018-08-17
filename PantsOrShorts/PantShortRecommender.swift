@@ -65,4 +65,12 @@ public class PantShortRecommender {
             thresholdTemp = currentTemp.value - 1
         }
     }
+    
+    public func getMessage(for temp: Celsius) -> String {
+        if(temp.value > thresholdTemp) {
+            return "shorts"
+        } else {
+            return "pants"
+        }
+    }
 }

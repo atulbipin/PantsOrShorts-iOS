@@ -6,7 +6,7 @@
 //  Copyright © 2018 Atul Bipin. All rights reserved.
 //
 
-import XCTest
+/*import XCTest
 @testable import PantsOrShorts
 
 class PantsOrShortsTests: XCTestCase {
@@ -33,4 +33,4 @@ class PantsOrShortsTests: XCTestCase {
         }
     }
     
-}
+}*/
