@@ -15,6 +15,7 @@
 		390BAF392126681C00203541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BAF372126681C00203541 /* LaunchScreen.storyboard */; };
 		390BAF442126681C00203541 /* PantsOrShortsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF432126681C00203541 /* PantsOrShortsTests.swift */; };
 		390BAF4F2126681C00203541 /* PantsOrShortsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */; };
+		397704A92126B84900C56DD7 /* PantShortRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704A82126B84900C56DD7 /* PantShortRecommender.swift */; };
 		39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
 		69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		390BAF4A2126681C00203541 /* PantsOrShortsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantsOrShortsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsUITests.swift; sourceTree = "<group>"; };
 		390BAF502126681C00203541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		397704A82126B84900C56DD7 /* PantShortRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantShortRecommender.swift; sourceTree = "<group>"; };
 		39ED704421267AFF00582E1C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.release.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.release.xcconfig"; sourceTree = "<group>"; };
 		A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantsOrShorts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				390BAF3A2126681C00203541 /* Info.plist */,
 				390BAF322126681B00203541 /* PantsOrShorts.xcdatamodeld */,
 				39ED704421267AFF00582E1C /* WeatherAPI.swift */,
+				397704A82126B84900C56DD7 /* PantShortRecommender.swift */,
 			);
 			path = PantsOrShorts;
 			sourceTree = "<group>";
@@ -289,15 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PantsOrShorts-checkManifestLockResult.txt",
 			);
@@ -311,16 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -341,6 +336,7 @@
 				39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */,
 				390BAF2E2126681B00203541 /* ViewController.swift in Sources */,
 				390BAF2C2126681B00203541 /* AppDelegate.swift in Sources */,
+				397704A92126B84900C56DD7 /* PantShortRecommender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
