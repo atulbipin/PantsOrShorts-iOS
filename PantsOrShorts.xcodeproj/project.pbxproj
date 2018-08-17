@@ -15,6 +15,7 @@
 		390BAF392126681C00203541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BAF372126681C00203541 /* LaunchScreen.storyboard */; };
 		390BAF442126681C00203541 /* PantsOrShortsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF432126681C00203541 /* PantsOrShortsTests.swift */; };
 		390BAF4F2126681C00203541 /* PantsOrShortsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */; };
+		39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		390BAF4A2126681C00203541 /* PantsOrShortsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantsOrShortsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsUITests.swift; sourceTree = "<group>"; };
 		390BAF502126681C00203541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39ED704421267AFF00582E1C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				390BAF372126681C00203541 /* LaunchScreen.storyboard */,
 				390BAF3A2126681C00203541 /* Info.plist */,
 				390BAF322126681B00203541 /* PantsOrShorts.xcdatamodeld */,
+				39ED704421267AFF00582E1C /* WeatherAPI.swift */,
 			);
 			path = PantsOrShorts;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */,
+				39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */,
 				390BAF2E2126681B00203541 /* ViewController.swift in Sources */,
 				390BAF2C2126681B00203541 /* AppDelegate.swift in Sources */,
 			);
