@@ -1,15 +1,17 @@
 //
-//  ViewController.swift
-//  PantsOrShorts
+//  TodayViewController.swift
+//  PoSExtension
 //
-//  Created by Atul Bipin on 2018-08-16.
+//  Created by Justin Park on 8/17/18.
 //  Copyright © 2018 Atul Bipin. All rights reserved.
 //
 
 import UIKit
+import NotificationCenter
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
+        
     let locationManager = CLLocationManager()
     let pantShortRecommender = PantShortRecommender()
     let weatherAPI = Weather()
@@ -19,14 +21,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func onButtonPress() {
         locationManager.requestLocation()
     }
-
+    
     @IBAction func tooCold() {
         if let currentWeather = self.currentWeather {
             pantShortRecommender.updateUserPreference(with: .tooCold, for: currentWeather)
             locationManager.requestLocation()
         }
     }
-
+    
     @IBAction func tooHot() {
         if let currentWeather = self.currentWeather {
             pantShortRecommender.updateUserPreference(with: .tooHot, for: currentWeather)
@@ -41,13 +43,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        
+        locationManager.requestLocation()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -55,14 +59,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("\(latitude),\(longitude)")
             
             // TODO: Figure out async stuff going on here
-
+            
             weatherAPI.getWeather(lon: longitude, lat: latitude) { currentWeather in
                 if let currentWeather = currentWeather {
                     self.currentWeather = Celsius(temp: currentWeather.temp)
                     debugPrint("Current weather: \(Celsius(temp: currentWeather.temp).value)°C")
                     
-                    self.recommendationLabel.text = self.pantShortRecommender.getMessage(for: self.currentWeather!)
-                   self.recommendationLabel.sizeToFit()
+                    self.recommendationLabel.text = "You should wear " +  self.pantShortRecommender.getMessage(for: self.currentWeather!) + " today!"
+                    self.recommendationLabel.sizeToFit()
                     debugPrint(self.pantShortRecommender.getRecommendation(for: self.currentWeather!))
                 }
             }
@@ -101,5 +105,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             completionHandler(nil)
         }
     }
+    
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+        // Perform any setup necessary in order to update the view.
+        
+        // If an error is encountered, use NCUpdateResult.Failed
+        // If there's no update required, use NCUpdateResult.NoData
+        // If there's an update, use NCUpdateResult.NewData
+        
+        completionHandler(NCUpdateResult.newData)
+    }
+    
 }
-
