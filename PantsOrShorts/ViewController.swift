@@ -11,6 +11,7 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
+    let weatherAPI = Weather()
     
     @IBAction func onButtonPress() {
         locationManager.requestLocation()
@@ -35,6 +36,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let latitude = locations.last?.coordinate.latitude, let longitude = locations.last?.coordinate.longitude {
             print("\(latitude),\(longitude)")
+            
+            weatherAPI.getWeather(long: longitude, lat: latitude)
             
             lookUpCurrentLocation { geoLocation in
                 print(geoLocation?.locality ?? "Unknown geo location")
