@@ -37,7 +37,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if let latitude = locations.last?.coordinate.latitude, let longitude = locations.last?.coordinate.longitude {
             print("\(latitude),\(longitude)")
             
-            weatherAPI.getWeather(long: longitude, lat: latitude)
+            weatherAPI.getWeather(lon: longitude, lat: latitude)
             
             lookUpCurrentLocation { geoLocation in
                 print(geoLocation?.locality ?? "Unknown geo location")
