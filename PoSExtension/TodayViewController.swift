@@ -43,6 +43,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        
+        locationManager.requestLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +65,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
                     self.currentWeather = Celsius(temp: currentWeather.temp)
                     debugPrint("Current weather: \(Celsius(temp: currentWeather.temp).value)°C")
                     
-                    self.recommendationLabel.text = self.pantShortRecommender.getMessage(for: self.currentWeather!)
+                    self.recommendationLabel.text = "You should wear " +  self.pantShortRecommender.getMessage(for: self.currentWeather!) + " today!"
                     self.recommendationLabel.sizeToFit()
                     debugPrint(self.pantShortRecommender.getRecommendation(for: self.currentWeather!))
                 }

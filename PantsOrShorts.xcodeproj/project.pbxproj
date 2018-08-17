@@ -665,6 +665,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P45P8NP67G;
 				INFOPLIST_FILE = PantsOrShorts/Info.plist;
@@ -672,8 +673,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustinPark.PantsOrShorts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -685,6 +687,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P45P8NP67G;
 				INFOPLIST_FILE = PantsOrShorts/Info.plist;
@@ -692,8 +695,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustinPark.PantsOrShorts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -786,14 +790,14 @@
 			baseConfigurationReference = 14FADFE2A640698F33B227B1 /* Pods-PoSExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DT54T9R534;
+				DEVELOPMENT_TEAM = P45P8NP67G;
 				INFOPLIST_FILE = PoSExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.PoSExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustinPark.PantsOrShorts.PoSExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -806,14 +810,14 @@
 			baseConfigurationReference = 034B03A8077773A722C9BA87 /* Pods-PoSExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DT54T9R534;
+				DEVELOPMENT_TEAM = P45P8NP67G;
 				INFOPLIST_FILE = PoSExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.PoSExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustinPark.PantsOrShorts.PoSExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
