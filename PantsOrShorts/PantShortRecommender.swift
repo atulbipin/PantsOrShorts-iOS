@@ -36,7 +36,7 @@ public enum UserPreference {
 
 public class PantShortRecommender {
     private let DEFAULT_THRESHOLD_TEMP = 21.0 // In Celsius
-    private let USER_THRESHOLD_KEY = "shorts_thresh_hold"
+    private let USER_THRESHOLD_KEY = "shorts_threshold"
     
     private var thresholdTemp: Double {
         get {
