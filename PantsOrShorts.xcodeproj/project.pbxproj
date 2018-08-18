@@ -15,7 +15,17 @@
 		390BAF392126681C00203541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BAF372126681C00203541 /* LaunchScreen.storyboard */; };
 		390BAF442126681C00203541 /* PantsOrShortsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF432126681C00203541 /* PantsOrShortsTests.swift */; };
 		390BAF4F2126681C00203541 /* PantsOrShortsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */; };
-		397704A92126B84900C56DD7 /* PantShortRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704A82126B84900C56DD7 /* PantShortRecommender.swift */; };
+		397704AE212889A400C56DD7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704AD212889A400C56DD7 /* Weather.swift */; };
+		397704B2212889CB00C56DD7 /* PantsOrShortsRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */; };
+		397704B721288BC100C56DD7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B621288BC100C56DD7 /* Location.swift */; };
+		397704B921288D4800C56DD7 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B821288D4800C56DD7 /* CurrentLocation.swift */; };
+		397704BB21288E1900C56DD7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BA21288E1900C56DD7 /* Logger.swift */; };
+		397704BD2128927C00C56DD7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BC2128927C00C56DD7 /* HomeViewController.swift */; };
+		397704C021289A6000C56DD7 /* PantsOrShortsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BF21289A6000C56DD7 /* PantsOrShortsViewModel.swift */; };
+		397704C22128A0B200C56DD7 /* PantsOrShortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C12128A0B200C56DD7 /* PantsOrShortsViewController.swift */; };
+		397704C42128A6AA00C56DD7 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C32128A6AA00C56DD7 /* UIColor+CustomColors.swift */; };
+		397704C62128A95000C56DD7 /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C52128A95000C56DD7 /* UIStoryboard+Loader.swift */; };
+		397704C82128AA6500C56DD7 /* UIViewController+Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C72128AA6500C56DD7 /* UIViewController+Subview.swift */; };
 		39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
 		69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */; };
 		940066C0591F0B52757FC6A7 /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */; };
@@ -28,7 +38,6 @@
 		B3E76FA9212743CE00803DDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF2B2126681B00203541 /* AppDelegate.swift */; };
 		B3E76FAA212743CE00803DDC /* PantsOrShorts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF322126681B00203541 /* PantsOrShorts.xcdatamodeld */; };
 		B3E76FAB212743CE00803DDC /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
-		B3E76FAC212743CE00803DDC /* PantShortRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704A82126B84900C56DD7 /* PantShortRecommender.swift */; };
 		B3E76FB02127457E00803DDC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FAF2127457E00803DDC /* Alamofire.framework */; };
 		B3E76FB52127468300803DDC /* Alamofire.framework in Sources */ = {isa = PBXBuildFile; fileRef = B3E76FAF2127457E00803DDC /* Alamofire.framework */; };
 		B3E76FB7212746E700803DDC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB6212746E700803DDC /* Alamofire.framework */; };
@@ -89,7 +98,17 @@
 		390BAF4A2126681C00203541 /* PantsOrShortsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantsOrShortsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsUITests.swift; sourceTree = "<group>"; };
 		390BAF502126681C00203541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		397704A82126B84900C56DD7 /* PantShortRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantShortRecommender.swift; sourceTree = "<group>"; };
+		397704AD212889A400C56DD7 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsRecommender.swift; sourceTree = "<group>"; };
+		397704B621288BC100C56DD7 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		397704B821288D4800C56DD7 /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
+		397704BA21288E1900C56DD7 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		397704BC2128927C00C56DD7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		397704BF21289A6000C56DD7 /* PantsOrShortsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsViewModel.swift; sourceTree = "<group>"; };
+		397704C12128A0B200C56DD7 /* PantsOrShortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsViewController.swift; sourceTree = "<group>"; };
+		397704C32128A6AA00C56DD7 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		397704C52128A95000C56DD7 /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
+		397704C72128AA6500C56DD7 /* UIViewController+Subview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Subview.swift"; sourceTree = "<group>"; };
 		39ED704421267AFF00582E1C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.release.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.release.xcconfig"; sourceTree = "<group>"; };
 		A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantsOrShorts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,15 +202,18 @@
 		390BAF2A2126681A00203541 /* PantsOrShorts */ = {
 			isa = PBXGroup;
 			children = (
+				397704AC2128899100C56DD7 /* Model */,
+				397704B3212889DA00C56DD7 /* View */,
+				397704B421288A0000C56DD7 /* ViewModel */,
+				397704B521288AD100C56DD7 /* Services */,
+				397704BE2128937600C56DD7 /* Extensions */,
 				390BAF2B2126681B00203541 /* AppDelegate.swift */,
 				390BAF2D2126681B00203541 /* ViewController.swift */,
-				390BAF2F2126681B00203541 /* Main.storyboard */,
 				390BAF352126681C00203541 /* Assets.xcassets */,
 				390BAF372126681C00203541 /* LaunchScreen.storyboard */,
 				390BAF3A2126681C00203541 /* Info.plist */,
 				390BAF322126681B00203541 /* PantsOrShorts.xcdatamodeld */,
-				39ED704421267AFF00582E1C /* WeatherAPI.swift */,
-				397704A82126B84900C56DD7 /* PantShortRecommender.swift */,
+				397704BC2128927C00C56DD7 /* HomeViewController.swift */,
 			);
 			path = PantsOrShorts;
 			sourceTree = "<group>";
@@ -212,6 +234,53 @@
 				390BAF502126681C00203541 /* Info.plist */,
 			);
 			path = PantsOrShortsUITests;
+			sourceTree = "<group>";
+		};
+		397704AC2128899100C56DD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				397704AD212889A400C56DD7 /* Weather.swift */,
+				397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */,
+				397704B821288D4800C56DD7 /* CurrentLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		397704B3212889DA00C56DD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				390BAF2F2126681B00203541 /* Main.storyboard */,
+				397704C12128A0B200C56DD7 /* PantsOrShortsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		397704B421288A0000C56DD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				397704BF21289A6000C56DD7 /* PantsOrShortsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		397704B521288AD100C56DD7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				39ED704421267AFF00582E1C /* WeatherAPI.swift */,
+				397704B621288BC100C56DD7 /* Location.swift */,
+				397704BA21288E1900C56DD7 /* Logger.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		397704BE2128937600C56DD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				397704C32128A6AA00C56DD7 /* UIColor+CustomColors.swift */,
+				397704C52128A95000C56DD7 /* UIStoryboard+Loader.swift */,
+				397704C72128AA6500C56DD7 /* UIViewController+Subview.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B3E76F9B2127432A00803DDC /* PoSExtension */ = {
@@ -459,12 +528,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397704C62128A95000C56DD7 /* UIStoryboard+Loader.swift in Sources */,
 				B3E76FB52127468300803DDC /* Alamofire.framework in Sources */,
+				397704BB21288E1900C56DD7 /* Logger.swift in Sources */,
 				390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */,
+				397704B921288D4800C56DD7 /* CurrentLocation.swift in Sources */,
+				397704C021289A6000C56DD7 /* PantsOrShortsViewModel.swift in Sources */,
+				397704C82128AA6500C56DD7 /* UIViewController+Subview.swift in Sources */,
+				397704B721288BC100C56DD7 /* Location.swift in Sources */,
+				397704B2212889CB00C56DD7 /* PantsOrShortsRecommender.swift in Sources */,
 				39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */,
 				390BAF2E2126681B00203541 /* ViewController.swift in Sources */,
+				397704C22128A0B200C56DD7 /* PantsOrShortsViewController.swift in Sources */,
+				397704C42128A6AA00C56DD7 /* UIColor+CustomColors.swift in Sources */,
 				390BAF2C2126681B00203541 /* AppDelegate.swift in Sources */,
-				397704A92126B84900C56DD7 /* PantShortRecommender.swift in Sources */,
+				397704AE212889A400C56DD7 /* Weather.swift in Sources */,
+				397704BD2128927C00C56DD7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +571,6 @@
 				B3E76FA9212743CE00803DDC /* AppDelegate.swift in Sources */,
 				B3E76FAA212743CE00803DDC /* PantsOrShorts.xcdatamodeld in Sources */,
 				B3E76FAB212743CE00803DDC /* WeatherAPI.swift in Sources */,
-				B3E76FAC212743CE00803DDC /* PantShortRecommender.swift in Sources */,
 				B3E76F9D2127432A00803DDC /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

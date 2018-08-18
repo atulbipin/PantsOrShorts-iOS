@@ -1,8 +1,8 @@
 //
-//  PantShortModel.swift
+//  PantsOrShorts.swift
 //  PantsOrShorts
 //
-//  Created by Atul Bipin on 2018-08-17.
+//  Created by Atul Bipin on 2018-08-18.
 //  Copyright © 2018 Atul Bipin. All rights reserved.
 //
 
@@ -10,9 +10,9 @@ import Foundation
 
 public struct Celsius {
     private let ABS_ZERO_K_IN_CELSIUS = -273.15
-
+    
     private let _value: Double
-
+    
     public var value: Double {
         get {
             return _value
@@ -24,9 +24,9 @@ public struct Celsius {
     }
 }
 
-public enum Recommendation {
-    case pant
-    case shorts
+public enum PantsOrShorts: String {
+    case pants = "pants"
+    case shorts = "shorts"
 }
 
 public enum UserPreference {
@@ -34,7 +34,7 @@ public enum UserPreference {
     case tooCold
 }
 
-public class PantShortRecommender {
+public class PantShortRecommender: NSObject {
     private let DEFAULT_THRESHOLD_TEMP = 21.0 // In Celsius
     private let USER_THRESHOLD_KEY = "shorts_threshold"
     
@@ -53,8 +53,8 @@ public class PantShortRecommender {
         }
     }
     
-    public func getRecommendation(for temperature: Celsius) -> Recommendation {
-        return temperature.value > thresholdTemp ? .shorts : .pant
+    public func getRecommendation(for temp: Celsius) -> PantsOrShorts {
+        return temp.value > thresholdTemp ? .shorts : .pants
     }
     
     public func updateUserPreference(with preference: UserPreference, for currentTemp: Celsius) {
