@@ -14,9 +14,15 @@ protocol PantsOrShortsViewModelProtocol {
     var recommendation: PantsOrShorts { get }
 }
 
+public protocol PantsOrShortsViewModelDelegate: AnyObject {
+    func updateUI() -> Void
+}
+
 public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
-    private let weather = Weather()
+    private let weather = WeatherAPI()
     private let pantsOrShortsRecommender = PantShortRecommender()
+    
+    public weak var delegate: PantsOrShortsViewModelDelegate?
     
     // MARK: - PantsOrShortsViewModelProtocol
     
@@ -33,8 +39,12 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
         
         self.weather.getWeather(lon: location.longitude, lat: location.latitude) { weather in
             if let weather = weather {
-                self.currentTemp = "\(weather.temp)°C"
+                self.currentTemp = "\(Int(Temperature.kelvinToCelsius(temp: weather.temp)))°C"
                 self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: Celsius(temp: weather.temp))
+                
+                if let delegate = self.delegate {
+                    delegate.updateUI()
+                }
             }
         }
     }

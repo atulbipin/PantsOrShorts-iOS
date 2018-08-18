@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
                 let controller = UIStoryboard.loadPantsOrShortsViewController()
                 
                 let viewModel = PantsOrShortsViewModel(withLocation: location)
+                viewModel.delegate = controller
                 
                 controller.viewModel = viewModel
                 

@@ -29,13 +29,13 @@ public class Location: NSObject, CLLocationManagerDelegate {
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let latitude = locations.last?.coordinate.latitude, let longitude = locations.last?.coordinate.longitude {
-            Logger.shared.log(.info, anything: "USER COORDINATES: (lon, lat): (\(longitude), \(latitude)")
+            Logger.shared.log(.info, anything: "USER COORDINATES: (lon, lat): (\(longitude), \(latitude))")
             
             lookUpCurrentLocation { geoLocation in
                 Logger.shared.log(.info, anything: "USER CITY: \(geoLocation?.locality ?? "Unavailable")")
                 
                 if let callback = self.currentLocationCallback {
-                    callback(CurrentLocation(longitude: longitude, latitude: latitude, city: geoLocation?.locality ?? "Unknown"))
+                    callback(CurrentLocation(longitude: longitude, latitude: latitude, city: geoLocation?.locality ?? "Unknown City"))
                 }
             }
         }

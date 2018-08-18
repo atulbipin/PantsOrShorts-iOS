@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-public class Weather {
+public class WeatherAPI {
     private let API_KEY = "572a6acca7b36cc3b77ec5ab99658f3c"
     private let OPEN_WEATHER_BASE_URL = "https://api.openweathermap.org"
     private let WEATHER_API_ENDPOINT = "/data/2.5/weather"

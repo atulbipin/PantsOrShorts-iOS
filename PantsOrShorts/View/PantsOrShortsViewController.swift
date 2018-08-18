@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PantsOrShortsViewController: UIViewController {
+class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDelegate {
     var viewModel: PantsOrShortsViewModelProtocol? {
         didSet {
             styleUI()
@@ -74,5 +74,12 @@ class PantsOrShortsViewController: UIViewController {
         case .shorts:
             self.preferenceButton.setTitle("IT'S TOO COLD FOR SHORTS", for: .normal)
         }
+    }
+    
+    // MARK: - PantsOrShortsViewModelDelegate
+    
+    public func updateUI() {
+        styleUI()
+        fillUI()
     }
 }
