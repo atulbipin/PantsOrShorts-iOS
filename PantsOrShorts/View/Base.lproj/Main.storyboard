@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching weather..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q4-hE-sA6">
-                                <rect key="frame" x="93.333333333333329" y="392.33333333333331" width="189.33333333333337" height="27.666666666666686"/>
+                                <rect key="frame" x="93" y="392" width="189" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,16 +46,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Los Angeles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSp-Sr-9gJ">
-                                <rect key="frame" x="35" y="85" width="239" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="39"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vGa-RF-AtX">
+                                <rect key="frame" x="25" y="85" width="300" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSp-Sr-9gJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="214.66666666666666" height="46.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="39"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="18°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-a0-krI">
+                                        <rect key="frame" x="0.0" y="46.666666666666657" width="88.333333333333329" height="43.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="39"/>
+                                        <color key="textColor" red="0.22535660839999999" green="0.34716464289999999" blue="0.82101239459999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Gtu-DE-rxg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="NvL-VS-OO2"/>
+                                </constraints>
+                            </stackView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zou-f1-uvf">
-                                <rect key="frame" x="48.666666666666657" y="690" width="278" height="42"/>
+                                <rect key="frame" x="25" y="690" width="325" height="42"/>
                                 <color key="backgroundColor" red="0.81176470590000005" green="0.1764705882" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="ak7-I2-4HU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="30" minY="10" maxX="30" maxY="10"/>
                                 <state key="normal" title="IT'S TOO HOT FOR PANTS">
@@ -66,29 +84,50 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBm-a0-krI">
-                                <rect key="frame" x="35" y="136" width="119" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="39"/>
-                                <color key="textColor" red="0.22535660839999999" green="0.34716464289999999" blue="0.82101239459999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You should wear pants today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFr-s4-q5V">
-                                <rect key="frame" x="35" y="212" width="261" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Nec-pp-wtI">
+                                <rect key="frame" x="20" y="261" width="335" height="405"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="pants" translatesAutoresizingMaskIntoConstraints="NO" id="sqo-op-G8b">
+                                        <rect key="frame" x="0.0" y="35" width="335" height="335"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="sqo-op-G8b" secondAttribute="height" multiplier="1:1" id="fFv-I2-IJA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sqo-op-G8b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nec-pp-wtI" secondAttribute="leading" id="2kl-Lu-Gv7"/>
+                                    <constraint firstItem="sqo-op-G8b" firstAttribute="centerY" secondItem="Nec-pp-wtI" secondAttribute="centerY" id="7db-eR-wCP"/>
+                                    <constraint firstItem="sqo-op-G8b" firstAttribute="height" relation="lessThanOrEqual" secondItem="Nec-pp-wtI" secondAttribute="height" id="9EF-T3-YEX"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" id="J3W-CB-zZc"/>
+                                    <constraint firstItem="sqo-op-G8b" firstAttribute="centerX" secondItem="Nec-pp-wtI" secondAttribute="centerX" id="Vp6-wU-Le2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sqo-op-G8b" secondAttribute="trailing" id="cW9-NK-KiI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="You should wear pants today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFr-s4-q5V">
+                                <rect key="frame" x="25" y="216" width="300" height="25.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="nXs-g0-fuN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pants" translatesAutoresizingMaskIntoConstraints="NO" id="sqo-op-G8b">
-                                <rect key="frame" x="27" y="256" width="320" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93567843264248707" green="0.93567843264248707" blue="0.93567843264248707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Zou-f1-uvf" firstAttribute="top" secondItem="Nec-pp-wtI" secondAttribute="bottom" constant="24" id="8tO-iy-R9P"/>
+                            <constraint firstItem="Nec-pp-wtI" firstAttribute="top" secondItem="aFr-s4-q5V" secondAttribute="bottom" constant="19.666666666666657" id="9G1-HB-Rgu"/>
                             <constraint firstItem="Zou-f1-uvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9jN-xF-HuB"/>
+                            <constraint firstItem="Nec-pp-wtI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Df7-8Z-V5O"/>
+                            <constraint firstItem="vGa-RF-AtX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="F9y-Gj-9AS"/>
+                            <constraint firstItem="aFr-s4-q5V" firstAttribute="top" secondItem="vGa-RF-AtX" secondAttribute="bottom" constant="41" id="H64-Og-K5E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nec-pp-wtI" secondAttribute="trailing" constant="20" id="MI5-UR-OsD"/>
+                            <constraint firstItem="vGa-RF-AtX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="UL6-dL-0MT"/>
+                            <constraint firstItem="aFr-s4-q5V" firstAttribute="leading" secondItem="vGa-RF-AtX" secondAttribute="leading" id="d3u-rK-4rg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zou-f1-uvf" secondAttribute="bottom" constant="46" id="eLD-Kv-LBw"/>
+                            <constraint firstItem="Zou-f1-uvf" firstAttribute="leading" secondItem="vGa-RF-AtX" secondAttribute="leading" priority="750" id="qKh-Zy-pih"/>
+                            <constraint firstItem="Nec-pp-wtI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qX8-so-as0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
