@@ -8,22 +8,6 @@
 
 import Foundation
 
-public struct Celsius {
-    private let ABS_ZERO_K_IN_CELSIUS = -273.15
-    
-    private let _value: Double
-    
-    public var value: Double {
-        get {
-            return _value
-        }
-    }
-    
-    init(temp: Double) {
-        _value = temp + ABS_ZERO_K_IN_CELSIUS
-    }
-}
-
 public enum PantsOrShorts: String {
     case pants = "pants"
     case shorts = "shorts"
@@ -53,24 +37,16 @@ public class PantShortRecommender: NSObject {
         }
     }
     
-    public func getRecommendation(for temp: Celsius) -> PantsOrShorts {
-        return temp.value > thresholdTemp ? .shorts : .pants
+    public func getRecommendation(for temp: Double) -> PantsOrShorts {
+        return temp > thresholdTemp ? .shorts : .pants
     }
     
-    public func updateUserPreference(with preference: UserPreference, for currentTemp: Celsius) {
+    public func updateUserPreference(with preference: UserPreference, for currentTemp: Double) {
         switch preference {
         case .tooCold:
-            thresholdTemp = currentTemp.value + 1
+            thresholdTemp = currentTemp + 1
         case .tooHot:
-            thresholdTemp = currentTemp.value - 1
-        }
-    }
-    
-    public func getMessage(for temp: Celsius) -> String {
-        if(temp.value > thresholdTemp) {
-            return "shorts"
-        } else {
-            return "pants"
+            thresholdTemp = currentTemp - 1
         }
     }
 }

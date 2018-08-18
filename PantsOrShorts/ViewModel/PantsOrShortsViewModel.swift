@@ -8,10 +8,12 @@
 
 import Foundation
 
-protocol PantsOrShortsViewModelProtocol {
+public protocol PantsOrShortsViewModelProtocol {
     var currentCity: String { get }
     var currentTemp: String { get }
     var recommendation: PantsOrShorts { get }
+    
+    func updatePreference()
 }
 
 public protocol PantsOrShortsViewModelDelegate: AnyObject {
@@ -21,14 +23,27 @@ public protocol PantsOrShortsViewModelDelegate: AnyObject {
 public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     private let weather = WeatherAPI()
     private let pantsOrShortsRecommender = PantShortRecommender()
+    private var currentTempInCelsius: Double = 0
     
     public weak var delegate: PantsOrShortsViewModelDelegate?
     
     // MARK: - PantsOrShortsViewModelProtocol
     
-    var currentCity: String
-    var currentTemp: String
-    var recommendation: PantsOrShorts
+    public var currentCity: String {
+        didSet {
+            delegate?.updateUI()
+        }
+    }
+    public var currentTemp: String {
+        didSet {
+            delegate?.updateUI()
+        }
+    }
+    public var recommendation: PantsOrShorts {
+        didSet {
+            delegate?.updateUI()
+        }
+    }
     
     public init(withLocation location: CurrentLocation) {
         self.currentCity = location.city
@@ -41,15 +56,24 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     public func loadWeather(for location: CurrentLocation, completion: @escaping () -> Void) {
         self.weather.getWeather(lon: location.longitude, lat: location.latitude) { weather in
             if let weather = weather {
-                self.currentTemp = "\(Int(Temperature.kelvinToCelsius(temp: weather.temp)))°C"
-                self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: Celsius(temp: weather.temp))
+                self.currentTempInCelsius = Temperature.kelvinToCelsius(temp: weather.temp)
                 
-                if let delegate = self.delegate {
-                    delegate.updateUI()
-                }
+                self.currentTemp = "\(Int(self.currentTempInCelsius))°C"
+                self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
                 
                 completion()
             }
         }
+    }
+    
+    public func updatePreference() {
+        switch recommendation {
+        case .pants: // Must be too hot for pants
+            pantsOrShortsRecommender.updateUserPreference(with: .tooHot, for: self.currentTempInCelsius)
+        case .shorts: // Must be too cold for shorts
+            pantsOrShortsRecommender.updateUserPreference(with: .tooCold, for: self.currentTempInCelsius)
+        }
+        
+        self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
     }
 }

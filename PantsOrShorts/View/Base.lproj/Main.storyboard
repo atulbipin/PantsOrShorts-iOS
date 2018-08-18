@@ -83,6 +83,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeUserPreference" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9J-B8-RLy"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Nec-pp-wtI">
                                 <rect key="frame" x="20" y="261" width="335" height="405"/>

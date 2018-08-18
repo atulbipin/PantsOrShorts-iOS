@@ -15,6 +15,10 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
             fillUI()
         }
     }
+
+    @IBAction func changeUserPreference() {
+        viewModel?.updatePreference()
+    }
     
     @IBOutlet weak var recommendationLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
