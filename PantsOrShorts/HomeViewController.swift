@@ -29,10 +29,11 @@ class HomeViewController: UIViewController {
                 
                 let viewModel = PantsOrShortsViewModel(withLocation: location)
                 viewModel.delegate = controller
-                
                 controller.viewModel = viewModel
                 
-                self.insertChildController(controller, intoParentView: self.view)
+                viewModel.loadWeather(for: location) {
+                    self.insertChildController(controller, intoParentView: self.view)
+                }
             }
         }
     }

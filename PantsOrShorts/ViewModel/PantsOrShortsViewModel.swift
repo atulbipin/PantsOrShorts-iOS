@@ -36,7 +36,9 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
         self.recommendation = .pants
         
         super.init()
-        
+    }
+    
+    public func loadWeather(for location: CurrentLocation, completion: @escaping () -> Void) {
         self.weather.getWeather(lon: location.longitude, lat: location.latitude) { weather in
             if let weather = weather {
                 self.currentTemp = "\(Int(Temperature.kelvinToCelsius(temp: weather.temp)))°C"
@@ -45,6 +47,8 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
                 if let delegate = self.delegate {
                     delegate.updateUI()
                 }
+                
+                completion()
             }
         }
     }
