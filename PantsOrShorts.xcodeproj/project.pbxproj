@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		390BAF2C2126681B00203541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF2B2126681B00203541 /* AppDelegate.swift */; };
-		390BAF2E2126681B00203541 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF2D2126681B00203541 /* ViewController.swift */; };
 		390BAF312126681B00203541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390BAF2F2126681B00203541 /* Main.storyboard */; };
 		390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF322126681B00203541 /* PantsOrShorts.xcdatamodeld */; };
 		390BAF362126681C00203541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 390BAF352126681C00203541 /* Assets.xcassets */; };
@@ -86,7 +85,6 @@
 		14FADFE2A640698F33B227B1 /* Pods-PoSExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoSExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoSExtension/Pods-PoSExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		390BAF282126681A00203541 /* PantsOrShorts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantsOrShorts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		390BAF2B2126681B00203541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		390BAF2D2126681B00203541 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		390BAF302126681B00203541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		390BAF332126681B00203541 /* PantsOrShorts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PantsOrShorts.xcdatamodel; sourceTree = "<group>"; };
 		390BAF352126681C00203541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				397704B521288AD100C56DD7 /* Services */,
 				397704BE2128937600C56DD7 /* Extensions */,
 				390BAF2B2126681B00203541 /* AppDelegate.swift */,
-				390BAF2D2126681B00203541 /* ViewController.swift */,
 				390BAF352126681C00203541 /* Assets.xcassets */,
 				390BAF372126681C00203541 /* LaunchScreen.storyboard */,
 				390BAF3A2126681C00203541 /* Info.plist */,
@@ -539,7 +536,6 @@
 				397704B2212889CB00C56DD7 /* PantsOrShortsRecommender.swift in Sources */,
 				39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */,
 				397704CA2128AF8700C56DD7 /* Temperature.swift in Sources */,
-				390BAF2E2126681B00203541 /* ViewController.swift in Sources */,
 				397704C22128A0B200C56DD7 /* PantsOrShortsViewController.swift in Sources */,
 				397704C42128A6AA00C56DD7 /* UIColor+CustomColors.swift in Sources */,
 				390BAF2C2126681B00203541 /* AppDelegate.swift in Sources */,
