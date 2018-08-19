@@ -52,7 +52,7 @@ class PantsOrShortsAppViewController: PantsOrShortsViewController {
         self.view.backgroundColor = colors.backgroundColor
         self.cityLabel.textColor = colors.textColor
         self.recommendationLabel.textColor = colors.textColor
-        self.tempScaleToggleButton.titleLabel?.textColor = colors.secondaryTextColor
+        self.tempScaleToggleButton.setTitleColor(colors.secondaryTextColor, for: .normal)
         setNeedsStatusBarAppearanceUpdate()
     }
     
