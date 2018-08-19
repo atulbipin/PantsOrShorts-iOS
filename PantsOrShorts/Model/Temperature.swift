@@ -113,15 +113,6 @@ public struct Temperature: Comparable  {
         }
     }
     
-    public static func kelvinToCelsius(temp: Double) -> Double {
-        guard temp > 0 else {
-            Logger.shared.log(.error, anything: "Temperature in Kelvin must be > 0, it was \(temp)")
-            return 0
-        }
-        
-        return temp - 273.15
-    }
-    
     // MARK: - Comparable
     
     public static func < (lhs: Temperature, rhs: Temperature) -> Bool {
