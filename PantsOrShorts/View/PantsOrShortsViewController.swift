@@ -44,7 +44,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
             return
         }
         
-        self.weatherLabel.text = viewModel.currentTemp
+        self.weatherLabel.text = viewModel.currentTempString
         self.cityLabel.text = viewModel.currentCity
         self.recommendationLabel.text = "You should wear \(viewModel.recommendation.rawValue) today"
         self.pantsOrShortsImageView.image = UIImage(named: viewModel.recommendation.rawValue)

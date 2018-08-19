@@ -10,7 +10,7 @@ import Foundation
 
 public protocol PantsOrShortsViewModelProtocol {
     var currentCity: String { get }
-    var currentTemp: String { get }
+    var currentTempString: String { get }
     var recommendation: PantsOrShorts { get }
     var timeOfDay: TimeOfDay { get }
     
@@ -24,7 +24,7 @@ public protocol PantsOrShortsViewModelDelegate: AnyObject {
 public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     private let weatherAPI = WeatherAPI()
     private let pantsOrShortsRecommender = PantShortRecommender()
-    private var currentTempInCelsius: Double = 0
+    private var currentTemp: Temperature?
     
     public weak var delegate: PantsOrShortsViewModelDelegate?
     
@@ -35,7 +35,7 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
             delegate?.updateUI()
         }
     }
-    public var currentTemp: String {
+    public var currentTempString: String {
         didSet {
             delegate?.updateUI()
         }
@@ -53,7 +53,7 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     
     public init(withLocation location: CurrentLocation) {
         self.currentCity = location.city
-        self.currentTemp = "..."
+        self.currentTempString = "..."
         self.recommendation = .pants
         self.timeOfDay = .day
         
@@ -63,10 +63,11 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     public func loadWeather(for location: CurrentLocation, completion: @escaping () -> Void) {
         self.weatherAPI.getWeather(lon: location.longitude, lat: location.latitude) { weather in
             if let weather = weather {
-                self.currentTempInCelsius = Temperature.kelvinToCelsius(temp: weather.temp)
+                let currentTemp = Temperature(weather.temp, in: .kelvin)
                 
-                self.currentTemp = "\(Int(self.currentTempInCelsius))°C"
-                self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
+                self.currentTemp = currentTemp
+                self.currentTempString = currentTemp.getPrettyString(in: .celsius) // TODO: Add setting here
+                self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: currentTemp)
                 self.timeOfDay = TimeOfDay.get(sunrise: weather.sunriseUTCTimestamp, sunset: weather.sunsetUTCTimestamp)
                 
                 completion()
@@ -75,13 +76,17 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     }
     
     public func updatePreference() {
-        switch recommendation {
-        case .pants: // Must be too hot for pants
-            pantsOrShortsRecommender.updateUserPreference(with: .tooHot, for: self.currentTempInCelsius)
-        case .shorts: // Must be too cold for shorts
-            pantsOrShortsRecommender.updateUserPreference(with: .tooCold, for: self.currentTempInCelsius)
+        guard let currentTemp = currentTemp else {
+            return
         }
         
-        self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
+        switch recommendation {
+        case .pants: // Must be too hot for pants
+            pantsOrShortsRecommender.updateUserPreference(with: .tooHot, for: currentTemp)
+        case .shorts: // Must be too cold for shorts
+            pantsOrShortsRecommender.updateUserPreference(with: .tooCold, for: currentTemp)
+        }
+        
+        self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: currentTemp)
     }
 }

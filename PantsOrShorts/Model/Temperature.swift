@@ -18,11 +18,29 @@ public enum TemperatureError: Error {
     case invalidTemp(invalidTempInKelvin: Double)
 }
 
-public struct Temperature: Comparable {
-    private var celsius: Double
-    private var kelvin: Double
-    private var farenheit: Double
+public struct Temperature: Comparable  {
+    private var _celsius: Double
+    private var _kelvin: Double
+    private var _farenheit: Double
     private var scale: TemperatureScale
+    
+    public var celsius: Double {
+        get {
+            return _celsius
+        }
+    }
+    
+    public var kelvin: Double {
+        get {
+            return _kelvin
+        }
+    }
+    
+    public var farenheit: Double {
+        get {
+            return _farenheit
+        }
+    }
     
     private static func toCelsius(from scale: TemperatureScale, temp: Double) -> Double {
         switch scale {
@@ -53,14 +71,14 @@ public struct Temperature: Comparable {
         case .farenheit:
             return (temp + 459.67) * (5.0 / 9.0)
         case .kelvin:
-            return (temp * (9.0 / 5.0)) - 459.67
+            return temp
         }
     }
     
-    public init (_ value: Double, in scale: TemperatureScale) {
-        celsius = Temperature.toCelsius(from: scale, temp: value)
-        farenheit = Temperature.toFarenheit(from: scale, temp: value)
-        kelvin = Temperature.toKelvin(from: scale, temp: value)
+    public init(_ value: Double, in scale: TemperatureScale) {
+        _celsius = Temperature.toCelsius(from: scale, temp: value)
+        _farenheit = Temperature.toFarenheit(from: scale, temp: value)
+        _kelvin = Temperature.toKelvin(from: scale, temp: value)
         self.scale = scale
         
         do {
@@ -75,11 +93,11 @@ public struct Temperature: Comparable {
     public func getPrettyString(in scale: TemperatureScale) -> String {
         switch scale {
         case .celsius:
-            return "\(self.celsius)°C"
+            return "\(Int(self.celsius))°C"
         case .farenheit:
-            return "\(self.farenheit)°F"
+            return "\(Int(self.farenheit))°F"
         case .kelvin:
-            return "\(self.kelvin)K"
+            return "\(Int(self.kelvin))K"
         }
     }
     
