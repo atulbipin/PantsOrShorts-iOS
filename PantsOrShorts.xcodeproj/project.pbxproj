@@ -58,6 +58,14 @@
 		39F9D4DC2129717E00C259E6 /* UserDefaults+StoreSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4DA21296F8C00C259E6 /* UserDefaults+StoreSettings.swift */; };
 		39F9D4DE2129720900C259E6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4DD2129720900C259E6 /* UserSettings.swift */; };
 		39F9D4DF2129737100C259E6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4DD2129720900C259E6 /* UserSettings.swift */; };
+		39F9D4E621297BBC00C259E6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F9D4E421297BBC00C259E6 /* Interface.storyboard */; };
+		39F9D4E821297BBD00C259E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F9D4E721297BBD00C259E6 /* Assets.xcassets */; };
+		39F9D4EF21297BBD00C259E6 /* PantsOrShortsWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 39F9D4EE21297BBD00C259E6 /* PantsOrShortsWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		39F9D4F421297BBD00C259E6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4F321297BBD00C259E6 /* InterfaceController.swift */; };
+		39F9D4F621297BBD00C259E6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4F521297BBD00C259E6 /* ExtensionDelegate.swift */; };
+		39F9D4F821297BBD00C259E6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4F721297BBD00C259E6 /* NotificationController.swift */; };
+		39F9D4FA21297BBD00C259E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F9D4F921297BBD00C259E6 /* Assets.xcassets */; };
+		39F9D4FF21297BBD00C259E6 /* PantsOrShortsWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 39F9D4E221297BBC00C259E6 /* PantsOrShortsWatch.app */; };
 		69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */; };
 		940066C0591F0B52757FC6A7 /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */; };
 		B3E76FB52127468300803DDC /* Alamofire.framework in Sources */ = {isa = PBXBuildFile; fileRef = B3E76FAF2127457E00803DDC /* Alamofire.framework */; };
@@ -86,9 +94,45 @@
 			remoteGlobalIDString = 398C4C9C2128E7F300E76BF6;
 			remoteInfo = POSWidget;
 		};
+		39F9D4F021297BBD00C259E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 390BAF202126681A00203541 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39F9D4ED21297BBD00C259E6;
+			remoteInfo = "PantsOrShortsWatch Extension";
+		};
+		39F9D4FD21297BBD00C259E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 390BAF202126681A00203541 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39F9D4E121297BBC00C259E6;
+			remoteInfo = PantsOrShortsWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		39F9D50321297BBD00C259E6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				39F9D4EF21297BBD00C259E6 /* PantsOrShortsWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F9D50721297BBD00C259E6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				39F9D4FF21297BBD00C259E6 /* PantsOrShortsWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3E76FA82127432A00803DDC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +475,17 @@
 		39F9D4D82129443500C259E6 /* PantsOrShortsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsAppViewController.swift; sourceTree = "<group>"; };
 		39F9D4DA21296F8C00C259E6 /* UserDefaults+StoreSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+StoreSettings.swift"; sourceTree = "<group>"; };
 		39F9D4DD2129720900C259E6 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		39F9D4E221297BBC00C259E6 /* PantsOrShortsWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantsOrShortsWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39F9D4E521297BBC00C259E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		39F9D4E721297BBD00C259E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39F9D4E921297BBD00C259E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39F9D4EE21297BBD00C259E6 /* PantsOrShortsWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PantsOrShortsWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39F9D4F321297BBD00C259E6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		39F9D4F521297BBD00C259E6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		39F9D4F721297BBD00C259E6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		39F9D4F921297BBD00C259E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39F9D4FB21297BBD00C259E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39F9D4FC21297BBD00C259E6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.release.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.release.xcconfig"; sourceTree = "<group>"; };
 		9998E4D9DF70C8CF7FC6F130 /* Pods-POSWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSWidget/Pods-POSWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantsOrShorts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,6 +534,13 @@
 				398C4EF32128EC5900E76BF6 /* SwiftyJSON.framework in Frameworks */,
 				398C4EEA2128EBC200E76BF6 /* Pods_PantsOrShorts.framework in Frameworks */,
 				21E14D30FC030B83AB7478CF /* Pods_POSWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F9D4EB21297BBD00C259E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +858,8 @@
 				390BAF422126681C00203541 /* PantsOrShortsTests */,
 				390BAF4D2126681C00203541 /* PantsOrShortsUITests */,
 				398C4C9F2128E7F300E76BF6 /* POSWidget */,
+				39F9D4E321297BBC00C259E6 /* PantsOrShortsWatch */,
+				39F9D4F221297BBD00C259E6 /* PantsOrShortsWatch Extension */,
 				390BAF292126681A00203541 /* Products */,
 				D2779DB1F1927FB91E99EB53 /* Pods */,
 				1260EC20EDF870856CE5B130 /* Frameworks */,
@@ -809,6 +873,8 @@
 				390BAF3F2126681C00203541 /* PantsOrShortsTests.xctest */,
 				390BAF4A2126681C00203541 /* PantsOrShortsUITests.xctest */,
 				398C4C9D2128E7F300E76BF6 /* POSWidget.appex */,
+				39F9D4E221297BBC00C259E6 /* PantsOrShortsWatch.app */,
+				39F9D4EE21297BBD00C259E6 /* PantsOrShortsWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -913,6 +979,29 @@
 			path = POSWidget;
 			sourceTree = "<group>";
 		};
+		39F9D4E321297BBC00C259E6 /* PantsOrShortsWatch */ = {
+			isa = PBXGroup;
+			children = (
+				39F9D4E421297BBC00C259E6 /* Interface.storyboard */,
+				39F9D4E721297BBD00C259E6 /* Assets.xcassets */,
+				39F9D4E921297BBD00C259E6 /* Info.plist */,
+			);
+			path = PantsOrShortsWatch;
+			sourceTree = "<group>";
+		};
+		39F9D4F221297BBD00C259E6 /* PantsOrShortsWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				39F9D4F321297BBD00C259E6 /* InterfaceController.swift */,
+				39F9D4F521297BBD00C259E6 /* ExtensionDelegate.swift */,
+				39F9D4F721297BBD00C259E6 /* NotificationController.swift */,
+				39F9D4F921297BBD00C259E6 /* Assets.xcassets */,
+				39F9D4FB21297BBD00C259E6 /* Info.plist */,
+				39F9D4FC21297BBD00C259E6 /* PushNotificationPayload.apns */,
+			);
+			path = "PantsOrShortsWatch Extension";
+			sourceTree = "<group>";
+		};
 		D2779DB1F1927FB91E99EB53 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -939,11 +1028,13 @@
 				390BAF262126681A00203541 /* Resources */,
 				8F1611C9F7009112507A2A00 /* [CP] Embed Pods Frameworks */,
 				B3E76FA82127432A00803DDC /* Embed App Extensions */,
+				39F9D50721297BBD00C259E6 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				398C4CA72128E7F300E76BF6 /* PBXTargetDependency */,
+				39F9D4FE21297BBD00C259E6 /* PBXTargetDependency */,
 			);
 			name = PantsOrShorts;
 			productName = PantsOrShorts;
@@ -1004,6 +1095,40 @@
 			productReference = 398C4C9D2128E7F300E76BF6 /* POSWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		39F9D4E121297BBC00C259E6 /* PantsOrShortsWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39F9D50421297BBD00C259E6 /* Build configuration list for PBXNativeTarget "PantsOrShortsWatch" */;
+			buildPhases = (
+				39F9D4E021297BBC00C259E6 /* Resources */,
+				39F9D50321297BBD00C259E6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39F9D4F121297BBD00C259E6 /* PBXTargetDependency */,
+			);
+			name = PantsOrShortsWatch;
+			productName = PantsOrShortsWatch;
+			productReference = 39F9D4E221297BBC00C259E6 /* PantsOrShortsWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		39F9D4ED21297BBD00C259E6 /* PantsOrShortsWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39F9D50021297BBD00C259E6 /* Build configuration list for PBXNativeTarget "PantsOrShortsWatch Extension" */;
+			buildPhases = (
+				39F9D4EA21297BBD00C259E6 /* Sources */,
+				39F9D4EB21297BBD00C259E6 /* Frameworks */,
+				39F9D4EC21297BBD00C259E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PantsOrShortsWatch Extension";
+			productName = "PantsOrShortsWatch Extension";
+			productReference = 39F9D4EE21297BBD00C259E6 /* PantsOrShortsWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1038,6 +1163,12 @@
 							};
 						};
 					};
+					39F9D4E121297BBC00C259E6 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					39F9D4ED21297BBD00C259E6 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 390BAF232126681A00203541 /* Build configuration list for PBXProject "PantsOrShorts" */;
@@ -1057,6 +1188,8 @@
 				390BAF3E2126681C00203541 /* PantsOrShortsTests */,
 				390BAF492126681C00203541 /* PantsOrShortsUITests */,
 				398C4C9C2128E7F300E76BF6 /* POSWidget */,
+				39F9D4E121297BBC00C259E6 /* PantsOrShortsWatch */,
+				39F9D4ED21297BBD00C259E6 /* PantsOrShortsWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -1092,6 +1225,23 @@
 			files = (
 				398C4EF62128EDCB00E76BF6 /* Assets.xcassets in Resources */,
 				398C4CA42128E7F300E76BF6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F9D4E021297BBC00C259E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F9D4E821297BBD00C259E6 /* Assets.xcassets in Resources */,
+				39F9D4E621297BBC00C259E6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F9D4EC21297BBD00C259E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F9D4FA21297BBD00C259E6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,6 +1375,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		39F9D4EA21297BBD00C259E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F9D4F821297BBD00C259E6 /* NotificationController.swift in Sources */,
+				39F9D4F621297BBD00C259E6 /* ExtensionDelegate.swift in Sources */,
+				39F9D4F421297BBD00C259E6 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1242,6 +1402,16 @@
 			isa = PBXTargetDependency;
 			target = 398C4C9C2128E7F300E76BF6 /* POSWidget */;
 			targetProxy = 398C4CA62128E7F300E76BF6 /* PBXContainerItemProxy */;
+		};
+		39F9D4F121297BBD00C259E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39F9D4ED21297BBD00C259E6 /* PantsOrShortsWatch Extension */;
+			targetProxy = 39F9D4F021297BBD00C259E6 /* PBXContainerItemProxy */;
+		};
+		39F9D4FE21297BBD00C259E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39F9D4E121297BBC00C259E6 /* PantsOrShortsWatch */;
+			targetProxy = 39F9D4FD21297BBD00C259E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1268,6 +1438,14 @@
 				398C4CA32128E7F300E76BF6 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		39F9D4E421297BBC00C259E6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39F9D4E521297BBC00C259E6 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1559,6 +1737,90 @@
 			};
 			name = Release;
 		};
+		39F9D50121297BBD00C259E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT54T9R534;
+				INFOPLIST_FILE = "PantsOrShortsWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		39F9D50221297BBD00C259E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT54T9R534;
+				INFOPLIST_FILE = "PantsOrShortsWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		39F9D50521297BBD00C259E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT54T9R534;
+				IBSC_MODULE = PantsOrShortsWatch_Extension;
+				INFOPLIST_FILE = PantsOrShortsWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		39F9D50621297BBD00C259E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DT54T9R534;
+				IBSC_MODULE = PantsOrShortsWatch_Extension;
+				INFOPLIST_FILE = PantsOrShortsWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atulbipin.PantsOrShorts.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1603,6 +1865,24 @@
 			buildConfigurations = (
 				398C4CAA2128E7F300E76BF6 /* Debug */,
 				398C4CAB2128E7F300E76BF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39F9D50021297BBD00C259E6 /* Build configuration list for PBXNativeTarget "PantsOrShortsWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39F9D50121297BBD00C259E6 /* Debug */,
+				39F9D50221297BBD00C259E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39F9D50421297BBD00C259E6 /* Build configuration list for PBXNativeTarget "PantsOrShortsWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39F9D50521297BBD00C259E6 /* Debug */,
+				39F9D50621297BBD00C259E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
