@@ -10,10 +10,13 @@ import Foundation
 
 public protocol PantsOrShortsViewModelProtocol {
     var currentCity: String { get }
-    var currentTemp: String { get }
+    var currentTempString: String { get }
     var recommendation: PantsOrShorts { get }
+    var timeOfDay: TimeOfDay { get }
+    var tempScaleString: String { get }
     
-    func updatePreference()
+    func updateTempPreference()
+    func toggleTempScale()
 }
 
 public protocol PantsOrShortsViewModelDelegate: AnyObject {
@@ -21,9 +24,35 @@ public protocol PantsOrShortsViewModelDelegate: AnyObject {
 }
 
 public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
-    private let weather = WeatherAPI()
+    private let weatherAPI = WeatherAPI()
     private let pantsOrShortsRecommender = PantShortRecommender()
-    private var currentTempInCelsius: Double = 0
+    private var currentTemp: Temperature?
+    
+    private var tempScale: TemperatureScale? = TemperatureScale(rawValue: UserSettings.tempScale.getSetting() ?? "") {
+        didSet {
+            if let currentTemp = self.currentTemp, let tempScale = tempScale {
+                self.currentTempString = currentTemp.getPrettyString(in: tempScale)
+                UserSettings.tempScale.changeSetting(to: tempScale.rawValue)
+            }
+        }
+    }
+    
+    public var tempScaleString: String {
+        get {
+            guard let tempScale = tempScale else {
+                return TemperatureScale.celsius.rawValue
+            }
+            
+            switch tempScale {
+            case .celsius:
+                return TemperatureScale.farenheit.rawValue
+            case .farenheit:
+                fallthrough
+            default:
+                return TemperatureScale.celsius.rawValue
+            }
+        }
+    }
     
     public weak var delegate: PantsOrShortsViewModelDelegate?
     
@@ -34,7 +63,7 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
             delegate?.updateUI()
         }
     }
-    public var currentTemp: String {
+    public var currentTempString: String {
         didSet {
             delegate?.updateUI()
         }
@@ -44,36 +73,63 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
             delegate?.updateUI()
         }
     }
+    public var timeOfDay: TimeOfDay {
+        didSet {
+            delegate?.updateUI()
+        }
+    }
     
     public init(withLocation location: CurrentLocation) {
         self.currentCity = location.city
-        self.currentTemp = "..."
+        self.currentTempString = "..."
         self.recommendation = .pants
+        self.timeOfDay = .day
         
         super.init()
     }
     
     public func loadWeather(for location: CurrentLocation, completion: @escaping () -> Void) {
-        self.weather.getWeather(lon: location.longitude, lat: location.latitude) { weather in
-            if let weather = weather {
-                self.currentTempInCelsius = Temperature.kelvinToCelsius(temp: weather.temp)
+        self.weatherAPI.getWeather(lon: location.longitude, lat: location.latitude) { weather in
+            if let weather = weather, let tempScale = self.tempScale {
+                let currentTemp = Temperature(weather.temp, in: .kelvin)
                 
-                self.currentTemp = "\(Int(self.currentTempInCelsius))°C"
-                self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
+                self.currentTemp = currentTemp
+                self.currentTempString = currentTemp.getPrettyString(in: tempScale) // TODO: Add setting here
+                self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: currentTemp)
+                self.timeOfDay = TimeOfDay.get(sunrise: weather.sunriseUTCTimestamp, sunset: weather.sunsetUTCTimestamp)
                 
                 completion()
             }
         }
     }
     
-    public func updatePreference() {
-        switch recommendation {
-        case .pants: // Must be too hot for pants
-            pantsOrShortsRecommender.updateUserPreference(with: .tooHot, for: self.currentTempInCelsius)
-        case .shorts: // Must be too cold for shorts
-            pantsOrShortsRecommender.updateUserPreference(with: .tooCold, for: self.currentTempInCelsius)
+    public func updateTempPreference() {
+        guard let currentTemp = currentTemp else {
+            return
         }
         
-        self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
+        switch recommendation {
+        case .pants: // Must be too hot for pants
+            pantsOrShortsRecommender.updateUserPreference(with: .tooHot, for: currentTemp)
+        case .shorts: // Must be too cold for shorts
+            pantsOrShortsRecommender.updateUserPreference(with: .tooCold, for: currentTemp)
+        }
+        
+        self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: currentTemp)
+    }
+    
+    public func toggleTempScale() {
+        guard let tempScale = tempScale else {
+            return
+        }
+        
+        switch tempScale {
+        case .celsius:
+            self.tempScale = .farenheit
+        case .farenheit:
+            self.tempScale = .celsius
+        default:
+            self.tempScale = .celsius
+        }
     }
 }

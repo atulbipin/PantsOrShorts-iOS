@@ -19,36 +19,32 @@ public enum UserPreference {
 }
 
 public class PantShortRecommender: NSObject {
-    private let DEFAULT_THRESHOLD_TEMP = 21.0 // In Celsius
-    private let USER_THRESHOLD_KEY = "shorts_threshold"
+    private let defaultShortsThreshold = Temperature(21.0, in: .celsius)
     
-    private let sharedDefaults = UserDefaults.init(suiteName: "group.com.POSShared")
-    
-    private var thresholdTemp: Double {
+    private var thresholdTemp: Temperature {
         get {
-            if let thresholdValue = sharedDefaults?.string(forKey: USER_THRESHOLD_KEY), let thresholdDouble = Double(thresholdValue) {
-                return thresholdDouble
+            if let thresholdValue = UserSettings.shortsThreshold.getSetting(), let thresholdDouble = Double(thresholdValue) {
+                return Temperature(thresholdDouble, in: .celsius)
             } else {
-                return DEFAULT_THRESHOLD_TEMP
+                return defaultShortsThreshold
             }
         }
         
         set(newThreshold) {
-            sharedDefaults?.set(String(newThreshold), forKey: USER_THRESHOLD_KEY)
-            sharedDefaults?.synchronize() // TODO: Potentially move this to destructor?
+            UserSettings.shortsThreshold.changeSetting(to: String(newThreshold.celsius))
         }
     }
     
-    public func getRecommendation(for temp: Double) -> PantsOrShorts {
+    public func getRecommendation(for temp: Temperature) -> PantsOrShorts {
         return temp > thresholdTemp ? .shorts : .pants
     }
     
-    public func updateUserPreference(with preference: UserPreference, for currentTemp: Double) {
+    public func updateUserPreference(with preference: UserPreference, for currentTemp: Temperature) {
         switch preference {
         case .tooCold:
-            thresholdTemp = currentTemp + 1
+            thresholdTemp = Temperature(currentTemp.celsius + 1, in: .celsius)
         case .tooHot:
-            thresholdTemp = currentTemp - 1
+            thresholdTemp = Temperature(currentTemp.celsius - 1, in: .celsius)
         }
     }
 }

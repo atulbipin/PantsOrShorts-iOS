@@ -17,7 +17,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
     }
 
     @IBAction func changeUserPreference() {
-        viewModel?.updatePreference()
+        viewModel?.updateTempPreference()
     }
     
     @IBOutlet weak var recommendationLabel: UILabel!
@@ -35,7 +35,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
         fillUI()
     }
     
-    private func fillUI() {
+    func fillUI() {
         if !isViewLoaded {
             return
         }
@@ -44,7 +44,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
             return
         }
         
-        self.weatherLabel.text = viewModel.currentTemp
+        self.weatherLabel.text = viewModel.currentTempString
         self.cityLabel.text = viewModel.currentCity
         self.recommendationLabel.text = "You should wear \(viewModel.recommendation.rawValue) today"
         self.pantsOrShortsImageView.image = UIImage(named: viewModel.recommendation.rawValue)
@@ -52,7 +52,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
         self.setPreferenceButtonText(for: viewModel.recommendation)
     }
     
-    private func styleUI() {
+    func styleUI() {
         if !isViewLoaded {
             return
         }
