@@ -28,18 +28,21 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     private let pantsOrShortsRecommender = PantShortRecommender()
     private var currentTemp: Temperature?
     
-    private var tempScale = TemperatureScale(rawValue: UserSettings.tempScale.getSetting() ?? TemperatureScale.celsius.rawValue) ?? TemperatureScale.celsius {
+    private var tempScale: TemperatureScale? = TemperatureScale(rawValue: UserSettings.tempScale.getSetting() ?? "") {
         didSet {
-            if let currentTemp = self.currentTemp {
+            if let currentTemp = self.currentTemp, let tempScale = tempScale {
                 self.currentTempString = currentTemp.getPrettyString(in: tempScale)
+                UserSettings.tempScale.changeSetting(to: tempScale.rawValue)
             }
-            
-            UserSettings.tempScale.changeSetting(to: tempScale.rawValue)
         }
     }
     
     public var tempScaleString: String {
         get {
+            guard let tempScale = tempScale else {
+                return TemperatureScale.celsius.rawValue
+            }
+            
             switch tempScale {
             case .celsius:
                 return TemperatureScale.farenheit.rawValue
@@ -87,11 +90,11 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     
     public func loadWeather(for location: CurrentLocation, completion: @escaping () -> Void) {
         self.weatherAPI.getWeather(lon: location.longitude, lat: location.latitude) { weather in
-            if let weather = weather {
+            if let weather = weather, let tempScale = self.tempScale {
                 let currentTemp = Temperature(weather.temp, in: .kelvin)
                 
                 self.currentTemp = currentTemp
-                self.currentTempString = currentTemp.getPrettyString(in: self.tempScale) // TODO: Add setting here
+                self.currentTempString = currentTemp.getPrettyString(in: tempScale) // TODO: Add setting here
                 self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: currentTemp)
                 self.timeOfDay = TimeOfDay.get(sunrise: weather.sunriseUTCTimestamp, sunset: weather.sunsetUTCTimestamp)
                 
@@ -116,13 +119,17 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     }
     
     public func toggleTempScale() {
+        guard let tempScale = tempScale else {
+            return
+        }
+        
         switch tempScale {
         case .celsius:
-            tempScale = .farenheit
+            self.tempScale = .farenheit
         case .farenheit:
-            tempScale = .celsius
+            self.tempScale = .celsius
         default:
-            tempScale = .celsius
+            self.tempScale = .celsius
         }
     }
 }
