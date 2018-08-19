@@ -52,7 +52,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
         self.setPreferenceButtonText(for: viewModel.recommendation)
     }
     
-    private func styleUI() {
+    func styleUI() {
         if !isViewLoaded {
             return
         }

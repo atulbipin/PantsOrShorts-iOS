@@ -12,6 +12,7 @@ public protocol PantsOrShortsViewModelProtocol {
     var currentCity: String { get }
     var currentTemp: String { get }
     var recommendation: PantsOrShorts { get }
+    var timeOfDay: TimeOfDay { get }
     
     func updatePreference()
 }
@@ -21,7 +22,7 @@ public protocol PantsOrShortsViewModelDelegate: AnyObject {
 }
 
 public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
-    private let weather = WeatherAPI()
+    private let weatherAPI = WeatherAPI()
     private let pantsOrShortsRecommender = PantShortRecommender()
     private var currentTempInCelsius: Double = 0
     
@@ -44,22 +45,29 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
             delegate?.updateUI()
         }
     }
+    public var timeOfDay: TimeOfDay {
+        didSet {
+            delegate?.updateUI()
+        }
+    }
     
     public init(withLocation location: CurrentLocation) {
         self.currentCity = location.city
         self.currentTemp = "..."
         self.recommendation = .pants
+        self.timeOfDay = .day
         
         super.init()
     }
     
     public func loadWeather(for location: CurrentLocation, completion: @escaping () -> Void) {
-        self.weather.getWeather(lon: location.longitude, lat: location.latitude) { weather in
+        self.weatherAPI.getWeather(lon: location.longitude, lat: location.latitude) { weather in
             if let weather = weather {
                 self.currentTempInCelsius = Temperature.kelvinToCelsius(temp: weather.temp)
                 
                 self.currentTemp = "\(Int(self.currentTempInCelsius))°C"
                 self.recommendation = self.pantsOrShortsRecommender.getRecommendation(for: self.currentTempInCelsius)
+                self.timeOfDay = TimeOfDay.get(sunrise: weather.sunriseUTCTimestamp, sunset: weather.sunsetUTCTimestamp)
                 
                 completion()
             }

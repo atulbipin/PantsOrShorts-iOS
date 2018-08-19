@@ -49,7 +49,13 @@
 		398C4F0B2129399300E76BF6 /* UIColor+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0A2129399300E76BF6 /* UIColor+Themes.swift */; };
 		398C4F0D21293A0A00E76BF6 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0C21293A0A00E76BF6 /* Themes.swift */; };
 		398C4F0F21293C9100E76BF6 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0E21293C9100E76BF6 /* Time.swift */; };
+		398C4F11212941E500E76BF6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F10212941E500E76BF6 /* Weather.swift */; };
 		39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
+		39F9D4D42129436D00C259E6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F10212941E500E76BF6 /* Weather.swift */; };
+		39F9D4D52129439E00C259E6 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0E21293C9100E76BF6 /* Time.swift */; };
+		39F9D4D6212943A300C259E6 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0C21293A0A00E76BF6 /* Themes.swift */; };
+		39F9D4D7212943B300C259E6 /* UIColor+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0A2129399300E76BF6 /* UIColor+Themes.swift */; };
+		39F9D4D92129443500C259E6 /* PantsOrShortsAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9D4D82129443500C259E6 /* PantsOrShortsAppViewController.swift */; };
 		69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */; };
 		940066C0591F0B52757FC6A7 /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */; };
 		B3E76FB52127468300803DDC /* Alamofire.framework in Sources */ = {isa = PBXBuildFile; fileRef = B3E76FAF2127457E00803DDC /* Alamofire.framework */; };
@@ -419,7 +425,9 @@
 		398C4F0A2129399300E76BF6 /* UIColor+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Themes.swift"; sourceTree = "<group>"; };
 		398C4F0C21293A0A00E76BF6 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		398C4F0E21293C9100E76BF6 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		398C4F10212941E500E76BF6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		39ED704421267AFF00582E1C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		39F9D4D82129443500C259E6 /* PantsOrShortsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsAppViewController.swift; sourceTree = "<group>"; };
 		6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.release.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.release.xcconfig"; sourceTree = "<group>"; };
 		9998E4D9DF70C8CF7FC6F130 /* Pods-POSWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSWidget/Pods-POSWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PantsOrShorts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -845,6 +853,7 @@
 				397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */,
 				397704B821288D4800C56DD7 /* CurrentLocation.swift */,
 				397704C92128AF8700C56DD7 /* Temperature.swift */,
+				398C4F10212941E500E76BF6 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -854,6 +863,7 @@
 			children = (
 				390BAF2F2126681B00203541 /* Main.storyboard */,
 				397704C12128A0B200C56DD7 /* PantsOrShortsViewController.swift */,
+				39F9D4D82129443500C259E6 /* PantsOrShortsAppViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1152,6 +1162,8 @@
 				B3E76FB52127468300803DDC /* Alamofire.framework in Sources */,
 				397704BB21288E1900C56DD7 /* Logger.swift in Sources */,
 				390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */,
+				39F9D4D92129443500C259E6 /* PantsOrShortsAppViewController.swift in Sources */,
+				398C4F11212941E500E76BF6 /* Weather.swift in Sources */,
 				397704B921288D4800C56DD7 /* CurrentLocation.swift in Sources */,
 				398C4F0F21293C9100E76BF6 /* Time.swift in Sources */,
 				397704C021289A6000C56DD7 /* PantsOrShortsViewModel.swift in Sources */,
@@ -1190,15 +1202,19 @@
 			files = (
 				398C4EF92128F0AE00E76BF6 /* CurrentLocation.swift in Sources */,
 				398C4EF82128F0AE00E76BF6 /* PantsOrShortsRecommender.swift in Sources */,
+				39F9D4D52129439E00C259E6 /* Time.swift in Sources */,
 				398C4EFB2128F0B300E76BF6 /* PantsOrShortsViewModel.swift in Sources */,
 				398C4EFC2128F0BB00E76BF6 /* WeatherAPI.swift in Sources */,
 				398C4EFF2128F0C000E76BF6 /* UIColor+CustomColors.swift in Sources */,
 				398C4EFA2128F0AE00E76BF6 /* Temperature.swift in Sources */,
 				398C4F012128F0C000E76BF6 /* UIViewController+Subview.swift in Sources */,
 				398C4F062128F3F300E76BF6 /* PantsOrShortsViewController.swift in Sources */,
+				39F9D4D42129436D00C259E6 /* Weather.swift in Sources */,
 				398C4F052128F36200E76BF6 /* UIStoryboard+Loader.swift in Sources */,
 				398C4EFD2128F0BB00E76BF6 /* Location.swift in Sources */,
 				398C4EFE2128F0BB00E76BF6 /* Logger.swift in Sources */,
+				39F9D4D7212943B300C259E6 /* UIColor+Themes.swift in Sources */,
+				39F9D4D6212943A300C259E6 /* Themes.swift in Sources */,
 				398C4F072128F42A00E76BF6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

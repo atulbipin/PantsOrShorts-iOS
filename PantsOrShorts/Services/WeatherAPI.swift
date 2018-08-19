@@ -15,15 +15,17 @@ public class WeatherAPI {
     private let OPEN_WEATHER_BASE_URL = "https://api.openweathermap.org"
     private let WEATHER_API_ENDPOINT = "/data/2.5/weather"
     
-    private func extractCurrentTemperature(from responseJSON: JSON) -> CurrentWeather {
-        return CurrentWeather(
+    private func extractCurrentTemperature(from responseJSON: JSON) -> Weather {
+        return Weather(
             temp: responseJSON["main"]["temp"].double ?? -1,
             tempMin: responseJSON["main"]["temp_min"].double ?? -1,
-            tempMax: responseJSON["main"]["temp_max"].double ?? -1
+            tempMax: responseJSON["main"]["temp_max"].double ?? -1,
+            sunriseUTCTimestamp: responseJSON["sys"]["sunrise"].double ?? -1,
+            sunsetUTCTimestamp: responseJSON["sys"]["set"].double ?? -1
         )
     }
 
-    public func getWeather(lon: Double, lat: Double, completion: @escaping (CurrentWeather?) -> Void) {
+    public func getWeather(lon: Double, lat: Double, completion: @escaping (Weather?) -> Void) {
         let params = [
             "appid": API_KEY,
             "lat": lat,
@@ -41,11 +43,4 @@ public class WeatherAPI {
             
         }
     }
-}
-
-// NOTE: Temperature in Kelvin
-public struct CurrentWeather {
-    let temp: Double;
-    let tempMin: Double;
-    let tempMax: Double;
 }

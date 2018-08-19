@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+public enum TimeOfDay {
+    case day
+    case night
+    
+    private static var currentUTCTimestamp: Double {
+        get {
+            return NSDate().timeIntervalSince1970
+        }
+    }
+    
+    public static func get(sunrise: Double, sunset: Double) -> TimeOfDay {
+        if currentUTCTimestamp < sunrise || currentUTCTimestamp >= sunset {
+            return .night
+        } else {
+            return .day
+        }
+    }
+}
