@@ -46,6 +46,8 @@ public class Location: NSObject, CLLocationManagerDelegate {
     // MARK: - CLLocationManagerDelegate
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.locationManager.stopUpdatingLocation()
+        
         if let location = locations.last {
 
             let latitude = location.coordinate.latitude

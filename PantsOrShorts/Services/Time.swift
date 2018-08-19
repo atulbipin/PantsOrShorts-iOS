@@ -19,6 +19,7 @@ public enum TimeOfDay {
     }
     
     public static func get(sunrise: Double, sunset: Double) -> TimeOfDay {
+        // TODO: Account for case when sunrise or sunset doesn't exist, i.e. it is -1
         if currentUTCTimestamp < sunrise || currentUTCTimestamp >= sunset {
             return .night
         } else {

@@ -21,7 +21,7 @@ public class WeatherAPI {
             tempMin: responseJSON["main"]["temp_min"].double ?? -1,
             tempMax: responseJSON["main"]["temp_max"].double ?? -1,
             sunriseUTCTimestamp: responseJSON["sys"]["sunrise"].double ?? -1,
-            sunsetUTCTimestamp: responseJSON["sys"]["set"].double ?? -1
+            sunsetUTCTimestamp: responseJSON["sys"]["sunset"].double ?? -1
         )
     }
 
