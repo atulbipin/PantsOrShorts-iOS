@@ -17,7 +17,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
     }
 
     @IBAction func changeUserPreference() {
-        viewModel?.updatePreference()
+        viewModel?.updateTempPreference()
     }
     
     @IBOutlet weak var recommendationLabel: UILabel!
@@ -35,7 +35,7 @@ class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDeleg
         fillUI()
     }
     
-    private func fillUI() {
+    func fillUI() {
         if !isViewLoaded {
             return
         }

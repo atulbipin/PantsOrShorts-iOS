@@ -8,10 +8,10 @@
 
 import Foundation
 
-public enum TemperatureScale {
-    case celsius
-    case farenheit
-    case kelvin
+public enum TemperatureScale: String {
+    case celsius = "°C"
+    case farenheit = "°F"
+    case kelvin = "K"
 }
 
 public enum TemperatureError: Error {

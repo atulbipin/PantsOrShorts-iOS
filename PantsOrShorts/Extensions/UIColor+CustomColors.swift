@@ -15,4 +15,12 @@ extension UIColor {
     
     public static let hotRed = rgba(207, 45, 48)
     public static let coldBlue = rgba(57, 89, 209)
+    
+    // Light theme
+    public static let offWhite = rgba(239, 239, 239)
+    public static let translucentBlack = rgba(0, 0, 0, 0.5)
+    
+    // Dark theme
+    public static let nightGrey = rgba(36, 36, 36)
+    public static let translucentWhite = rgba(255, 255, 255, 0.5)
 }

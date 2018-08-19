@@ -9,9 +9,31 @@
 import UIKit
 
 class PantsOrShortsAppViewController: PantsOrShortsViewController {
-    
+    @IBOutlet weak var tempScaleToggleButton: UIButton!
+
+    @IBAction func tempScaleToggle() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        viewModel.toggleTempScale()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func fillUI() {
+        super.fillUI()
+        
+        if !isViewLoaded {
+            return
+        }
+        
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        self.tempScaleToggleButton.setTitle(viewModel.tempScaleString, for: .normal)
     }
     
     override func styleUI() {
@@ -30,6 +52,7 @@ class PantsOrShortsAppViewController: PantsOrShortsViewController {
         self.view.backgroundColor = colors.backgroundColor
         self.cityLabel.textColor = colors.textColor
         self.recommendationLabel.textColor = colors.textColor
+        self.tempScaleToggleButton.titleLabel?.textColor = colors.secondaryTextColor
         setNeedsStatusBarAppearanceUpdate()
     }
     

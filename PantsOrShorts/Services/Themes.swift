@@ -11,6 +11,7 @@ import UIKit
 public struct ThemeColors {
     let textColor: UIColor
     let backgroundColor: UIColor
+    let secondaryTextColor: UIColor
 }
 
 public enum Theme {
@@ -20,9 +21,9 @@ public enum Theme {
     public func getColors() -> ThemeColors {
         switch self {
         case .night:
-            return ThemeColors(textColor: .white, backgroundColor: .nightGrey)
+            return ThemeColors(textColor: .white, backgroundColor: .nightGrey, secondaryTextColor: .translucentWhite)
         case .day:
-            return ThemeColors(textColor: .black, backgroundColor: .offWhite)
+            return ThemeColors(textColor: .black, backgroundColor: .offWhite, secondaryTextColor: .translucentBlack)
         }
     }
 }
