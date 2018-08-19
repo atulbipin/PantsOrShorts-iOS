@@ -6,7 +6,7 @@ target 'PantsOrShorts' do
     pod 'Alamofire', '~> 4.7'
     pod 'SwiftyJSON', '~> 4.0'
 end
-target 'PoSExtension' do
+target 'POSWidget' do
     pod 'Alamofire', '~> 4.7'
     pod 'SwiftyJSON', '~> 4.0'
 end
