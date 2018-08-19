@@ -9,6 +9,12 @@
 import Foundation
 import CoreLocation
 
+public struct CurrentLocation {
+    public let longitude: Double
+    public let latitude: Double
+    public let city: String
+}
+
 public class Location: NSObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     

@@ -17,7 +17,6 @@
 		390BAF4F2126681C00203541 /* PantsOrShortsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BAF4E2126681C00203541 /* PantsOrShortsUITests.swift */; };
 		397704B2212889CB00C56DD7 /* PantsOrShortsRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */; };
 		397704B721288BC100C56DD7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B621288BC100C56DD7 /* Location.swift */; };
-		397704B921288D4800C56DD7 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B821288D4800C56DD7 /* CurrentLocation.swift */; };
 		397704BB21288E1900C56DD7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BA21288E1900C56DD7 /* Logger.swift */; };
 		397704BD2128927C00C56DD7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BC2128927C00C56DD7 /* HomeViewController.swift */; };
 		397704C021289A6000C56DD7 /* PantsOrShortsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BF21289A6000C56DD7 /* PantsOrShortsViewModel.swift */; };
@@ -35,7 +34,6 @@
 		398C4EF52128ECC400E76BF6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76F992127432A00803DDC /* NotificationCenter.framework */; };
 		398C4EF62128EDCB00E76BF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 390BAF352126681C00203541 /* Assets.xcassets */; };
 		398C4EF82128F0AE00E76BF6 /* PantsOrShortsRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */; };
-		398C4EF92128F0AE00E76BF6 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704B821288D4800C56DD7 /* CurrentLocation.swift */; };
 		398C4EFA2128F0AE00E76BF6 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C92128AF8700C56DD7 /* Temperature.swift */; };
 		398C4EFB2128F0B300E76BF6 /* PantsOrShortsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BF21289A6000C56DD7 /* PantsOrShortsViewModel.swift */; };
 		398C4EFC2128F0BB00E76BF6 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
@@ -164,7 +162,6 @@
 		390BAF502126681C00203541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsRecommender.swift; sourceTree = "<group>"; };
 		397704B621288BC100C56DD7 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		397704B821288D4800C56DD7 /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 		397704BA21288E1900C56DD7 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		397704BC2128927C00C56DD7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		397704BF21289A6000C56DD7 /* PantsOrShortsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantsOrShortsViewModel.swift; sourceTree = "<group>"; };
@@ -920,7 +917,6 @@
 			isa = PBXGroup;
 			children = (
 				397704B1212889CB00C56DD7 /* PantsOrShortsRecommender.swift */,
-				397704B821288D4800C56DD7 /* CurrentLocation.swift */,
 				397704C92128AF8700C56DD7 /* Temperature.swift */,
 				398C4F10212941E500E76BF6 /* Weather.swift */,
 				398C4F0C21293A0A00E76BF6 /* Themes.swift */,
@@ -1319,7 +1315,6 @@
 				390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */,
 				39F9D4D92129443500C259E6 /* PantsOrShortsAppViewController.swift in Sources */,
 				398C4F11212941E500E76BF6 /* Weather.swift in Sources */,
-				397704B921288D4800C56DD7 /* CurrentLocation.swift in Sources */,
 				398C4F0F21293C9100E76BF6 /* Time.swift in Sources */,
 				397704C021289A6000C56DD7 /* PantsOrShortsViewModel.swift in Sources */,
 				397704C82128AA6500C56DD7 /* UIViewController+Subview.swift in Sources */,
@@ -1355,7 +1350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				398C4EF92128F0AE00E76BF6 /* CurrentLocation.swift in Sources */,
 				398C4EF82128F0AE00E76BF6 /* PantsOrShortsRecommender.swift in Sources */,
 				39F9D4D52129439E00C259E6 /* Time.swift in Sources */,
 				398C4EFB2128F0B300E76BF6 /* PantsOrShortsViewModel.swift in Sources */,
