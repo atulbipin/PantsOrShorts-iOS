@@ -22,9 +22,11 @@ public class PantShortRecommender: NSObject {
     private let DEFAULT_THRESHOLD_TEMP = 21.0 // In Celsius
     private let USER_THRESHOLD_KEY = "shorts_threshold"
     
+    private let sharedDefaults = UserDefaults.init(suiteName: "group.com.POSShared")
+    
     private var thresholdTemp: Double {
         get {
-            if let thresholdValue = UserDefaults.standard.string(forKey: USER_THRESHOLD_KEY), let thresholdDouble = Double(thresholdValue) {
+            if let thresholdValue = sharedDefaults?.string(forKey: USER_THRESHOLD_KEY), let thresholdDouble = Double(thresholdValue) {
                 return thresholdDouble
             } else {
                 return DEFAULT_THRESHOLD_TEMP
@@ -32,8 +34,8 @@ public class PantShortRecommender: NSObject {
         }
         
         set(newThreshold) {
-            UserDefaults.standard.set(String(newThreshold), forKey: USER_THRESHOLD_KEY)
-            UserDefaults.standard.synchronize() // TODO: Potentially move this to destructor?
+            sharedDefaults?.set(String(newThreshold), forKey: USER_THRESHOLD_KEY)
+            sharedDefaults?.synchronize() // TODO: Potentially move this to destructor?
         }
     }
     

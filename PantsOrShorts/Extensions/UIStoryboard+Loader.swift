@@ -8,11 +8,11 @@
 
 import UIKit
 
-fileprivate enum Storyboard : String {
+enum Storyboard : String {
     case main = "Main"
 }
 
-fileprivate extension UIStoryboard {
+extension UIStoryboard {
     
     static func loadFromMain(_ identifier: String) -> UIViewController {
         return load(from: .main, identifier: identifier)
