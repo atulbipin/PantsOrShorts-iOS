@@ -14,5 +14,5 @@ extension UIColor {
     }
     
     public static let hotRed = rgba(207, 45, 48)
-    static let coldBlue = rgba(57, 89, 209)
+    public static let coldBlue = rgba(57, 89, 209)
 }
