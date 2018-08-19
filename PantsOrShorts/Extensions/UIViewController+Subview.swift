@@ -14,10 +14,16 @@ extension UIViewController {
         childController.willMove(toParentViewController: self)
         
         self.addChildViewController(childController)
+        childController.beginAppearanceTransition(true, animated: true)
         childController.view.frame = parentView.bounds
         parentView.addSubview(childController.view)
+        childController.view.alpha = 0
         
-        childController.didMove(toParentViewController: self)
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: .transitionCrossDissolve, animations: {
+            childController.view.alpha = 1
+        }, completion: { finished in
+            childController.didMove(toParentViewController: self)
+        })
     }
     
 }
