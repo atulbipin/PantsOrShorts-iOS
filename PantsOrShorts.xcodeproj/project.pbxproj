@@ -923,6 +923,8 @@
 				397704B821288D4800C56DD7 /* CurrentLocation.swift */,
 				397704C92128AF8700C56DD7 /* Temperature.swift */,
 				398C4F10212941E500E76BF6 /* Weather.swift */,
+				398C4F0C21293A0A00E76BF6 /* Themes.swift */,
+				397704B621288BC100C56DD7 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -949,9 +951,7 @@
 			isa = PBXGroup;
 			children = (
 				39ED704421267AFF00582E1C /* WeatherAPI.swift */,
-				397704B621288BC100C56DD7 /* Location.swift */,
 				397704BA21288E1900C56DD7 /* Logger.swift */,
-				398C4F0C21293A0A00E76BF6 /* Themes.swift */,
 				398C4F0E21293C9100E76BF6 /* Time.swift */,
 				39F9D4DD2129720900C259E6 /* UserSettings.swift */,
 			);
