@@ -46,6 +46,9 @@
 		398C4F052128F36200E76BF6 /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C52128A95000C56DD7 /* UIStoryboard+Loader.swift */; };
 		398C4F062128F3F300E76BF6 /* PantsOrShortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704C12128A0B200C56DD7 /* PantsOrShortsViewController.swift */; };
 		398C4F072128F42A00E76BF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397704BC2128927C00C56DD7 /* HomeViewController.swift */; };
+		398C4F0B2129399300E76BF6 /* UIColor+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0A2129399300E76BF6 /* UIColor+Themes.swift */; };
+		398C4F0D21293A0A00E76BF6 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0C21293A0A00E76BF6 /* Themes.swift */; };
+		398C4F0F21293C9100E76BF6 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C4F0E21293C9100E76BF6 /* Time.swift */; };
 		39ED704521267AFF00582E1C /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED704421267AFF00582E1C /* WeatherAPI.swift */; };
 		69050DD269614F94A0A917AE /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C6ACD1AF9E6E58066D83F3 /* Pods_PantsOrShorts.framework */; };
 		940066C0591F0B52757FC6A7 /* Pods_PantsOrShorts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E76FB32127459100803DDC /* Pods_PantsOrShorts.framework */; };
@@ -413,6 +416,9 @@
 		398C4EF22128EC5900E76BF6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		398C4F082128FA5500E76BF6 /* PantsOrShorts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PantsOrShorts.entitlements; sourceTree = "<group>"; };
 		398C4F092128FAA500E76BF6 /* POSWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = POSWidget.entitlements; sourceTree = "<group>"; };
+		398C4F0A2129399300E76BF6 /* UIColor+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Themes.swift"; sourceTree = "<group>"; };
+		398C4F0C21293A0A00E76BF6 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		398C4F0E21293C9100E76BF6 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		39ED704421267AFF00582E1C /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		6BC614DF587C7839CA450032 /* Pods-PantsOrShorts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PantsOrShorts.release.xcconfig"; path = "Pods/Target Support Files/Pods-PantsOrShorts/Pods-PantsOrShorts.release.xcconfig"; sourceTree = "<group>"; };
 		9998E4D9DF70C8CF7FC6F130 /* Pods-POSWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSWidget/Pods-POSWidget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -866,6 +872,8 @@
 				39ED704421267AFF00582E1C /* WeatherAPI.swift */,
 				397704B621288BC100C56DD7 /* Location.swift */,
 				397704BA21288E1900C56DD7 /* Logger.swift */,
+				398C4F0C21293A0A00E76BF6 /* Themes.swift */,
+				398C4F0E21293C9100E76BF6 /* Time.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -876,6 +884,7 @@
 				397704C32128A6AA00C56DD7 /* UIColor+CustomColors.swift */,
 				397704C52128A95000C56DD7 /* UIStoryboard+Loader.swift */,
 				397704C72128AA6500C56DD7 /* UIViewController+Subview.swift */,
+				398C4F0A2129399300E76BF6 /* UIColor+Themes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1138,11 +1147,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				398C4F0D21293A0A00E76BF6 /* Themes.swift in Sources */,
 				397704C62128A95000C56DD7 /* UIStoryboard+Loader.swift in Sources */,
 				B3E76FB52127468300803DDC /* Alamofire.framework in Sources */,
 				397704BB21288E1900C56DD7 /* Logger.swift in Sources */,
 				390BAF342126681B00203541 /* PantsOrShorts.xcdatamodeld in Sources */,
 				397704B921288D4800C56DD7 /* CurrentLocation.swift in Sources */,
+				398C4F0F21293C9100E76BF6 /* Time.swift in Sources */,
 				397704C021289A6000C56DD7 /* PantsOrShortsViewModel.swift in Sources */,
 				397704C82128AA6500C56DD7 /* UIViewController+Subview.swift in Sources */,
 				397704B721288BC100C56DD7 /* Location.swift in Sources */,
@@ -1151,6 +1162,7 @@
 				397704CA2128AF8700C56DD7 /* Temperature.swift in Sources */,
 				397704C22128A0B200C56DD7 /* PantsOrShortsViewController.swift in Sources */,
 				397704C42128A6AA00C56DD7 /* UIColor+CustomColors.swift in Sources */,
+				398C4F0B2129399300E76BF6 /* UIColor+Themes.swift in Sources */,
 				390BAF2C2126681B00203541 /* AppDelegate.swift in Sources */,
 				397704BD2128927C00C56DD7 /* HomeViewController.swift in Sources */,
 			);
