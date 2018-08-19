@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ This is the generic ViewController that controls the Today extension as well as the main app view (main app VC is its child)
+ */
 class PantsOrShortsViewController: UIViewController, PantsOrShortsViewModelDelegate {
     var viewModel: PantsOrShortsViewModelProtocol? {
         didSet {

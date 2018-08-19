@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/**
+ This is the ViewController that controls the main app view
+ */
 class PantsOrShortsAppViewController: PantsOrShortsViewController {
     @IBOutlet weak var tempScaleToggleButton: UIButton!
 
