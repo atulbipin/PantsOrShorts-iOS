@@ -19,23 +19,19 @@ public enum UserPreference {
 }
 
 public class PantShortRecommender: NSObject {
-    private let DEFAULT_THRESHOLD_TEMP = Temperature(21.0, in: .celsius)
-    private let USER_THRESHOLD_KEY = "shorts_threshold"
-    
-    private let sharedDefaults = UserDefaults.init(suiteName: "group.com.POSShared")
+    private let defaultShortsThreshold = Temperature(21.0, in: .celsius)
     
     private var thresholdTemp: Temperature {
         get {
-            if let thresholdValue = sharedDefaults?.string(forKey: USER_THRESHOLD_KEY), let thresholdDouble = Double(thresholdValue) {
+            if let thresholdValue = UserSettings.shortsThreshold.getSetting(), let thresholdDouble = Double(thresholdValue) {
                 return Temperature(thresholdDouble, in: .celsius)
             } else {
-                return DEFAULT_THRESHOLD_TEMP
+                return defaultShortsThreshold
             }
         }
         
         set(newThreshold) {
-            sharedDefaults?.set(String(newThreshold.celsius), forKey: USER_THRESHOLD_KEY)
-            sharedDefaults?.synchronize() // TODO: Potentially move this to destructor?
+            UserSettings.shortsThreshold.changeSetting(to: String(newThreshold.celsius))
         }
     }
     

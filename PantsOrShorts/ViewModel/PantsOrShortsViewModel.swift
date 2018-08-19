@@ -28,11 +28,13 @@ public class PantsOrShortsViewModel: NSObject, PantsOrShortsViewModelProtocol {
     private let pantsOrShortsRecommender = PantShortRecommender()
     private var currentTemp: Temperature?
     
-    private var tempScale = TemperatureScale.celsius {
+    private var tempScale = TemperatureScale(rawValue: UserSettings.tempScale.getSetting() ?? TemperatureScale.celsius.rawValue) ?? TemperatureScale.celsius {
         didSet {
             if let currentTemp = self.currentTemp {
                 self.currentTempString = currentTemp.getPrettyString(in: tempScale)
             }
+            
+            UserSettings.tempScale.changeSetting(to: tempScale.rawValue)
         }
     }
     
