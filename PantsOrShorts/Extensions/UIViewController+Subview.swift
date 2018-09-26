@@ -11,9 +11,9 @@ import UIKit
 extension UIViewController {
     
     func insertChildController(_ childController: UIViewController, intoParentView parentView: UIView) {
-        childController.willMove(toParentViewController: self)
+        childController.willMove(toParent: self)
         
-        self.addChildViewController(childController)
+        self.addChild(childController)
         childController.beginAppearanceTransition(true, animated: true)
         childController.view.frame = parentView.bounds
         parentView.addSubview(childController.view)
@@ -22,7 +22,7 @@ extension UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0.1, options: .transitionCrossDissolve, animations: {
             childController.view.alpha = 1
         }, completion: { finished in
-            childController.didMove(toParentViewController: self)
+            childController.didMove(toParent: self)
         })
     }
     

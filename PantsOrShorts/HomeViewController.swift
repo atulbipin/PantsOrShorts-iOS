@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     public override var preferredStatusBarStyle: UIStatusBarStyle {
-        guard let childVC = self.childViewControllers.last as? PantsOrShortsViewController, let timeOfDay = childVC.viewModel?.timeOfDay else {
+        guard let childVC = self.children.last as? PantsOrShortsViewController, let timeOfDay = childVC.viewModel?.timeOfDay else {
             return .default
         }
         

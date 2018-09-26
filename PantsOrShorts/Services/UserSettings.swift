@@ -17,7 +17,6 @@ public enum UserSettings: String {
     }
     
     public func getSetting() -> String? {
-        let retVal = UserDefaults.shared.string(forKey: self.rawValue)
-        return retVal
+            return UserDefaults.shared.string(forKey: self.rawValue)
     }
 }
