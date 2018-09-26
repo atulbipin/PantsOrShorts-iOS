@@ -22,8 +22,7 @@ public class Location: NSObject, CLLocationManagerDelegate {
     
     public override init() {
         super.init()
-        
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
     }
     
     public func getCurrentLocation(completion: @escaping (CurrentLocation?) -> Void) {
@@ -35,6 +34,7 @@ public class Location: NSObject, CLLocationManagerDelegate {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         if authorizationStatus != .authorizedWhenInUse && authorizationStatus != .authorizedAlways {
             // User has not authorized access to location information.
+            locationManager.requestWhenInUseAuthorization()
             return
         }
         // Do not start services that aren't available.
@@ -45,7 +45,6 @@ public class Location: NSObject, CLLocationManagerDelegate {
         // Configure and start the service.
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.distanceFilter = 100.0  // In meters.
-        locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
     
@@ -55,7 +54,7 @@ public class Location: NSObject, CLLocationManagerDelegate {
         self.locationManager.stopUpdatingLocation()
         
         if let location = locations.last {
-
+ 
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
 
@@ -69,6 +68,10 @@ public class Location: NSObject, CLLocationManagerDelegate {
                 }
             }
         }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.startReceivingLocationChanges()
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
